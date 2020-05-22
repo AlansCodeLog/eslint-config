@@ -1,0 +1,33 @@
+
+name: Release
+on:
+  push:
+    branches:
+      - master
+      - beta
+      - alpha
+  repository_dispatch:
+    types: [semantic-release]
+    # to trigger:
+    # curl -v -H "Accept: application/vnd.github.everest-preview+json" -H "Authorization: token $GH_TOKEN" https://api.github.com/repos/alanscodelog/my-eslint-config/dispatches -d '{ "event_type": "semantic-release" }'
+jobs:
+  release:
+    if: "! contains(toJSON(github.event.commits.*.message), '[skip ci]')"
+    name: Release
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build and Test (Node.js ${{ matrix.node-version }})
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: yarn cache clean
+      - run: yarn install --frozen-lockfile
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release

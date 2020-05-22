@@ -1,0 +1,7 @@
+node_modules
+*.log
+.vscode
+
+# only used to quickly test locally
+tsconfig.json
+src/*
