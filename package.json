@@ -2,7 +2,7 @@
 	"name": "@alanscodelog/eslint-config",
 	"version": "0.0.0-semantically-released",
 	"description": "My eslint config.",
-	"main": "src/.eslintrc.js",
+	"main": ".eslintrc.js",
 	"scripts": {
 		"print": "npx eslint --print-config .eslintrc.js",
 		"print:missing": "npm run print | grep -A10000 \"wrap-regex\"",
