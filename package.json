@@ -6,10 +6,15 @@
 	"scripts": {
 		"print": "npx eslint --print-config .eslintrc.js",
 		"print:missing": "npm run print | grep -A10000 \"wrap-regex\"",
+		"lint:test": "npx eslint \"src/**/*\" --max-warnings=0",
+		"lint:commits": "npx commitlint --from $(git rev-list HEAD --not --remotes | tail -1)^ --to HEAD --verbose",
 		"postinstall": "node postinstall.js"
 	},
-	"author": "Alan <alanscodelog@gmail.com>",
-	"license": "MIT",
+	"husky": {
+		"hooks": {
+			"pre-push": "npm run lint:commits"
+		}
+	},
 	"peerDependencies": {
 		"typescript": ">=3.7",
 		"@typescript-eslint/eslint-plugin": ">= 3.0.0",
@@ -20,30 +25,30 @@
 		"eslint-plugin-simple-import-sort": ">= 5.0.0"
 	},
 	"devDependencies": {
-		"semantic-release": "^17.0.7",
-		"@semantic-release/changelog": "^5.0.1",
-		"@semantic-release/commit-analyzer": "^8.0.1",
-		"@semantic-release/github": "^7.0.5",
-		"@semantic-release/npm": "^7.0.5",
-		"@semantic-release/release-notes-generator": "^9.0.1",
-		"conventional-changelog-conventionalcommits": "^4.3.0",
-
 		"typescript": ">=3.7",
 		"@typescript-eslint/eslint-plugin": ">= 3.0.0",
 		"@typescript-eslint/parser": ">= 3.0.0",
 		"eslint": ">= 7.0.0",
 		"eslint-import-resolver-typescript": ">= 2.0.0",
 		"eslint-plugin-import": ">= 2.20.0",
-		"eslint-plugin-simple-import-sort": ">= 5.0.0"
+		"eslint-plugin-simple-import-sort": ">= 5.0.0",
+
+		"@alanscodelog/tsconfigs": "^2.0.1",
+
+		"semantic-release": "^17.0.8",
+		"@semantic-release/changelog": "^5.0.1",
+		"@semantic-release/commit-analyzer": "^8.0.1",
+		"@semantic-release/github": "^7.0.7",
+		"@semantic-release/npm": "^7.0.5",
+		"@semantic-release/release-notes-generator": "^9.0.1",
+		"conventional-changelog-conventionalcommits": "^4.3.0",
+		"@alanscodelog/semantic-release-config": "^1.0.0",
+		"@alanscodelog/commitlint-config": "^1.0.0",
+		"commitlint": "^8.3.5"
 	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/AlansCodeLog/my-eslint-config.git"
-	},
-	"bugs": {
-		"url": "https://github.com/AlansCodeLog/my-eslint-config/issues"
-	},
-	"homepage": "https://github.com/AlansCodeLog/my-eslint-config#readme",
+	"author": "Alan <alanscodelog@gmail.com>",
+	"repository": "https://github.com/alanscodelog/my-eslint-config",
+	"license": "MIT",
 	"files": [
 		".eslintrc.js",
 		"tests.js",
@@ -56,7 +61,18 @@
 		"tests.js",
 		"postinstall.js"
 	],
+	"release": { "extends": [ "@alanscodelog/semantic-release-config" ] },
+	"commitlint": { "extends": [ "@alanscodelog" ] },
+	"@comments": {
+		"devDependencies": {
+			"@alanscodelog/tsconfigs" : "For local testing against my typescript config."
+		},
+		"scripts": {
+			"lint:commits": "Lints all unpushed commits in the active branch."
+		}
+	 },
 	"publishConfig": {
 		"access": "public"
 	}
 }
+

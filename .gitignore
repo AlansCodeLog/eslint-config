@@ -1,7 +1,8 @@
-node_modules
-*.log
+*.log*
+/*lock*
 .vscode
+node_modules
 
 # only used to quickly test locally
-tsconfig.json
-src/*
+src
+tests

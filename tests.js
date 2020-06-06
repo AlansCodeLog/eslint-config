@@ -1,5 +1,4 @@
 module.exports ={
-	// TOCONFIGURE
 	rules: {
 		"import/no-unused-modules": "off",
 		"import/no-extraneous-dependencies": "off",

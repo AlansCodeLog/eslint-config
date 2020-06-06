@@ -1,3 +1,5 @@
+[![Release](https://github.com/alanscodelog/my-eslint-config/workflows/Release/badge.svg)](https://www.npmjs.com/package/@alanscodelog/eslint-config)
+
 My preffered base eslint configs.
 
 # Install

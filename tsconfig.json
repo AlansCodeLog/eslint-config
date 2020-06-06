@@ -1,0 +1,22 @@
+// https://www.typescriptlang.org/tsconfig/
+{
+	// ./node_modules/@alanscodelog/tsconfigs/tsconfig.json
+	// https://github.com/AlansCodeLog/my-tsconfigs
+	"extends": "@alanscodelog/tsconfigs",
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"@/*": [ "src/*" ],
+		},
+	},
+	// the libs are explicitly specified because otherwise typescript includes the dom by default
+	"lib": [
+		"esnext",
+	],
+	"include": [
+		"src/**/*.ts",
+		// "tests/**/*.ts",
+	],
+	"exclude": [
+	]
+}
