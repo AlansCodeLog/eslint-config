@@ -6,8 +6,7 @@
 	"scripts": {
 		"print": "npx eslint --print-config .eslintrc.js",
 		"print:missing": "npm run print | grep -A10000 \"wrap-regex\"",
-		"lint:test": "npx eslint \"src/**/*\"",
-		"semantic-release": "semantic-release"
+		"postinstall": "node postinstall.js"
 	},
 	"author": "Alan <alanscodelog@gmail.com>",
 	"license": "MIT",
@@ -49,11 +48,13 @@
 		".eslintrc.js",
 		"tests.js",
 		"install.sh",
-		"copy/*"
+		"postinstall.js",
+		"copy"
 	],
 	"eslintIgnore": [
 		"copy/*",
-		"tests.js"
+		"tests.js",
+		"postinstall.js"
 	],
 	"publishConfig": {
 		"access": "public"
