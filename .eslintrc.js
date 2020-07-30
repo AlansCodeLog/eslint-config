@@ -296,7 +296,7 @@ module.exports = {
 		"@typescript-eslint/no-extra-non-null-assertion": "warn",
 		"@typescript-eslint/no-floating-promises": [ "warn", { ignoreIIFE: true } ],
 		"@typescript-eslint/no-for-in-array": "warn",
-		"@typescript-eslint/no-inferrable-types": [ "warn", { ignoreParameters: true, ignoreProperties: false } ],
+		"@typescript-eslint/no-inferrable-types": [ "warn", { ignoreParameters: true, ignoreProperties: true } ],
 		"@typescript-eslint/no-misused-new": "warn",
 		"@typescript-eslint/no-misused-promises": "warn",
 		"@typescript-eslint/no-non-null-asserted-optional-chain": "warn",
