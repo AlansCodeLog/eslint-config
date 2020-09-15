@@ -119,6 +119,8 @@ module.exports = {
 		"@typescript-eslint/consistent-type-definitions": [ "warn", "type" ],
 		"@typescript-eslint/no-parameter-properties": "warn",
 		"@typescript-eslint/prefer-function-type": "warn",
+		"@typescript-eslint/prefer-enum-initializers":"warn",
+		"@typescript-eslint/prefer-literal-enum-member":"off",
 		// #regionend
 
 		// #region STYLE - CLASS RELATED
@@ -278,6 +280,8 @@ module.exports = {
 		"@typescript-eslint/prefer-namespace-keyword": "warn",
 		"@typescript-eslint/triple-slash-reference": "warn",
 		"@typescript-eslint/unified-signatures": "warn",
+		"@typescript-eslint/ban-ts-comment": [ "warn", { 'ts-expect-error': 'allow-with-description'}],
+		"@typescript-eslint/ban-tslint-comment": [ "error" ],
 		// #regionend
 
 		// #region PREFERENCE - FILES
@@ -318,8 +322,14 @@ module.exports = {
 		"@typescript-eslint/switch-exhaustiveness-check": "warn",
 		"@typescript-eslint/unbound-method": [ "warn", { ignoreStatic: true } ],
 		"@typescript-eslint/require-await": "warn",
+		"@typescript-eslint/no-confusing-non-null-assertion" :"off",
+		"@typescript-eslint/no-implicit-any-catch": [ "warn", { allowExplicitAny: true }],
 		"@typescript-eslint/no-implied-eval": "warn",
 		"@typescript-eslint/no-invalid-this": "warn",
+		"@typescript-eslint/no-loop-func": "warn",
+		"@typescript-eslint/no-loss-of-precision":"warn",
+		"@typescript-eslint/no-redeclare": [ "warn", { ignoreDeclarationMerge:true}],
+		"@typescript-eslint/no-shadow": [ "warn", { ignoreTypeValueShadow: true, ignoreFunctionTypeParameterNameValueShadow: true}],
 		"@typescript-eslint/return-await": "warn",
 		"@typescript-eslint/no-unused-expressions": [ "warn", { allowTernary: true } ],
 
@@ -364,7 +374,6 @@ module.exports = {
 		"no-label-var": "warn",
 		"no-labels": "warn",
 		"no-lone-blocks": "warn",
-		"no-loop-func": "warn",
 		"no-misleading-character-class": "warn",
 		"no-mixed-operators": "warn",
 		"no-multi-spaces": "warn",
@@ -374,9 +383,9 @@ module.exports = {
 		"no-obj-calls": "warn",
 		"no-octal-escape": "warn",
 		"no-octal": "warn",
+		"no-promise-executor-return":"warn",
 		"no-proto": "warn",
 		"no-prototype-builtins": "warn",
-		"no-redeclare": "warn",
 		"no-regex-spaces": "warn",
 		"no-script-url": "warn",
 		"no-self-assign": "warn",
@@ -384,7 +393,6 @@ module.exports = {
 		"no-sequences": "warn",
 		"no-setter-return": "warn",
 		"no-shadow-restricted-names": "warn",
-		"no-shadow": [ "warn", { hoist: "all" } ],
 		"no-sparse-arrays": "warn",
 		"no-template-curly-in-string": "warn",
 		"no-this-before-super": "warn",
@@ -393,6 +401,7 @@ module.exports = {
 		"no-unexpected-multiline": "warn",
 		"no-unmodified-loop-condition": "warn",
 		"no-unreachable": "warn",
+		"no-unreachable-loop": "warn",
 		"no-unsafe-finally": "warn",
 		"no-unsafe-negation": "warn",
 		"no-unused-labels": "warn",
@@ -424,7 +433,11 @@ module.exports = {
 		// "no-extra-semi": "off",
 		// "no-implied-eval": "off",
 		// "no-invalid-this": "off",
+		// "no-loop-func": "off",
+		// "no-loss-of-precision": "off",
+		// "no-redeclare": "off",
 		// "no-return-await": "off",
+		// "no-shadow": "off",
 		// "no-throw-literal": "off",
 		// "no-unused-expressions": "off",
 		// "no-unused-vars": "off",
@@ -440,6 +453,7 @@ module.exports = {
 		// "@typescript-eslint/ban-types": "off",
 		// "@typescript-eslint/camelcase": "off",
 		// "@typescript-eslint/class-name-casing": "off",
+		// "@typescript-eslint/consistent-type-imports": "off", // not needed
 		// "@typescript-eslint/explicit-module-boundary-types": "off", // not needed, explicit-function-return-type is on
 		// "@typescript-eslint/init-declarations": "off",
 		// "@typescript-eslint/interface-name-prefix": "off",
@@ -480,6 +494,7 @@ module.exports = {
 		// "func-style": "off",
 		// "function-paren-newline": "off",
 		// "id-blacklist": "off",
+		// "id-denylist": "off",
 		// "id-length": "off",
 		// "id-match": "off",
 		// "implicit-arrow-linebreak": ["off", "beside"], // too annoying in certain situations
@@ -569,7 +584,7 @@ module.exports = {
 		// "unicode-bom": "off",
 		// "vars-on-top": "off",
 		// "wrap-regex": "off",
-		// #regionend
+		// // #regionend
 
 	},
 }

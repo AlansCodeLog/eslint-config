@@ -33,17 +33,17 @@
 		"eslint-plugin-import": ">= 2.20.0",
 		"eslint-plugin-simple-import-sort": ">= 5.0.0",
 
-		"@alanscodelog/tsconfigs": "^2.0.1",
+		"@alanscodelog/tsconfigs": "^2.1.1",
 
-		"semantic-release": "^17.0.8",
+		"semantic-release": "^17.1.1",
 		"@semantic-release/changelog": "^5.0.1",
 		"@semantic-release/commit-analyzer": "^8.0.1",
-		"@semantic-release/github": "^7.0.7",
-		"@semantic-release/npm": "^7.0.5",
+		"@semantic-release/github": "^7.1.1",
+		"@semantic-release/npm": "^7.0.6",
 		"@semantic-release/release-notes-generator": "^9.0.1",
-		"conventional-changelog-conventionalcommits": "^4.3.0",
+		"conventional-changelog-conventionalcommits": "^4.4.0",
 		"@alanscodelog/semantic-release-config": "^1.0.1",
-		"@alanscodelog/commitlint-config": "^1.0.0",
+		"@alanscodelog/commitlint-config": "^1.0.1",
 		"commitlint": "^11.0.0"
 	},
 	"author": "Alan <alanscodelog@gmail.com>",
