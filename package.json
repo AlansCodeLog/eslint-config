@@ -44,7 +44,7 @@
 		"conventional-changelog-conventionalcommits": "^4.3.0",
 		"@alanscodelog/semantic-release-config": "^1.0.1",
 		"@alanscodelog/commitlint-config": "^1.0.0",
-		"commitlint": "^8.3.5"
+		"commitlint": "^11.0.0"
 	},
 	"author": "Alan <alanscodelog@gmail.com>",
 	"repository": "https://github.com/alanscodelog/my-eslint-config",
