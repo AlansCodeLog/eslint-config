@@ -320,7 +320,6 @@ module.exports = {
 		"@typescript-eslint/restrict-plus-operands": [ "warn", { checkCompoundAssignments: true } ],
 		"@typescript-eslint/restrict-template-expressions": [ "warn", { allowNumber: true, allowBoolean: true, allowAny: true } ],
 		"@typescript-eslint/switch-exhaustiveness-check": "warn",
-		"@typescript-eslint/unbound-method": [ "warn", { ignoreStatic: true } ],
 		"@typescript-eslint/require-await": "warn",
 		"@typescript-eslint/no-confusing-non-null-assertion" :"off",
 		"@typescript-eslint/no-implicit-any-catch": [ "warn", { allowExplicitAny: true }],
@@ -467,6 +466,7 @@ module.exports = {
 		// "@typescript-eslint/no-magic-numbers": "off",
 		// "@typescript-eslint/no-non-null-assertion": "off",
 		// "@typescript-eslint/no-type-alias": "off",
+		// "@typescript-eslint/unbound-method": [ "off", { ignoreStatic: true } ], // giving weird errors
 		// "@typescript-eslint/no-unnecessary-condition": "off",
 		// "@typescript-eslint/no-unnecessary-type-arguments": "off",
 		// "@typescript-eslint/no-unsafe-assignment": "off",
