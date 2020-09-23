@@ -10,6 +10,6 @@ module.exports ={
 	rules: {
 		// I like to toggle these on occasionally, but otherwise keep them off
 		// "import/no-unused-modules": [ "warn", { unusedExports: true, missingExports: false /* interferes with ts */ } ],
-		// "@typescript-eslint/no-unnecessary-condition": [ "warn", { checkArrayPredicates: true, ignoreRhs: false /* ??? */ } ],
+		// "@typescript-eslint/no-unnecessary-condition": [ "warn", { allowConstantLoopConditions: true } ],
 	}
 }
