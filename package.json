@@ -22,7 +22,7 @@
 		"eslint": ">= 7.0.0",
 		"eslint-import-resolver-typescript": ">= 2.0.0",
 		"eslint-plugin-import": ">= 2.20.0",
-		"eslint-plugin-simple-import-sort": ">= 5.0.0"
+		"eslint-plugin-simple-import-sort": ">= 6.0.0"
 	},
 	"devDependencies": {
 		"typescript": ">=3.7",
@@ -31,11 +31,11 @@
 		"eslint": ">= 7.0.0",
 		"eslint-import-resolver-typescript": ">= 2.0.0",
 		"eslint-plugin-import": ">= 2.20.0",
-		"eslint-plugin-simple-import-sort": ">= 5.0.0",
+		"eslint-plugin-simple-import-sort": ">= 6.0.0",
 
 		"@alanscodelog/tsconfigs": "^2.1.1",
 
-		"semantic-release": "^17.1.1",
+		"semantic-release": "^17.3.0",
 		"@semantic-release/changelog": "^5.0.1",
 		"@semantic-release/commit-analyzer": "^8.0.1",
 		"@semantic-release/github": "^7.1.1",
