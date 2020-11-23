@@ -6,12 +6,14 @@
 	"scripts": {
 		"print": "npx eslint --print-config .eslintrc.js",
 		"print:missing": "npm run print | grep -A10000 \"wrap-regex\"",
-		"lint:test": "npx eslint \"src/**/*\" --max-warnings=0",
+		"lint:dev": "npx eslint \"src/**/*\" --max-warnings=0",
+		"test": "node tests/loads.js",
 		"lint:commits": "npx commitlint --from $(git rev-list HEAD --not --remotes | tail -1)^ --to HEAD --verbose",
 		"postinstall": "node postinstall.js"
 	},
 	"husky": {
 		"hooks": {
+			"pre-commit": "npm run test",
 			"pre-push": "npm run lint:commits"
 		}
 	},
@@ -44,7 +46,8 @@
 		"conventional-changelog-conventionalcommits": "^4.4.0",
 		"@alanscodelog/semantic-release-config": "^1.0.1",
 		"@alanscodelog/commitlint-config": "^1.0.1",
-		"commitlint": "^11.0.0"
+		"commitlint": "^11.0.0",
+		"husky":"^4.0.0"
 	},
 	"author": "Alan <alanscodelog@gmail.com>",
 	"repository": "https://github.com/alanscodelog/my-eslint-config",

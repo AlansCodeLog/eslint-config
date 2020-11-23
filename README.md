@@ -1,10 +1,11 @@
+![Build](https://github.com/alanscodelog/my-eslint-config/workflows/Build/badge.svg)
 [![Release](https://github.com/alanscodelog/my-eslint-config/workflows/Release/badge.svg)](https://www.npmjs.com/package/@alanscodelog/eslint-config)
 
-My preffered base eslint configs.
+My preffered base eslint configs along with an "install" script for quickly setting up the configs to extend from this one..
 
 # Install
 
-Note: The last command will overwrite `.eslintrc` if it exists.
+Note: The last command is the install script and will overwrite `.eslintrc` if it exists.
 
 ```bash
 yarn add -D \

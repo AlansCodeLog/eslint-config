@@ -1,23 +1,26 @@
-name: Release
+name: Build
+# not technically necessary because release also runs tests but this way the build badge is separate
 
 env:
   USE_LOCKFILE: false
 
 on:
+  schedule:
+    # every first of the month at 12:00 noon GMT-3
+    # https://crontab.guru/#0_12_1_*_*
+    - cron:  '0 15 1 * *'
   push:
-    branches: [ master, alpha, beta ]
+    branches: [ master ]
   repository_dispatch:
-    types: [ release ]
-    # to trigger: curl -v -H "Accept: application/vnd.github.everest-preview+json" -H "Authorization: token $GH_TOKEN" https://api.github.com/repos/alanscodelog/my-eslint-config/dispatches -d '{ "event_type": "release" }'
+    types: [ build ]
+    # to trigger: curl -v -H "Accept: application/vnd.github.everest-preview+json" -H "Authorization: token $GH_TOKEN" https://api.github.com/repos/alanscodelog/TOREPONAME/dispatches -d '{ "event_type": "build" }'
 
 jobs:
-  release:
-    if: "! contains(toJSON(github.event.commits.*.message), '[skip ci]')"
+  build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        # awaiting https://github.com/actions/setup-node/issues/26 so we can just set this to [lts, latest]
-        node-version: [10.x]
+        node-version: [10.x, 14.x]
 
     steps:
 
@@ -50,10 +53,4 @@ jobs:
       if: "env.USE_LOCKFILE == 'false'"
 
     - run: yarn test
-
-    - name: Release
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      run: npx semantic-release
     # endregion
