@@ -243,7 +243,6 @@ module.exports = {
 		// #region PREFERENCE - GENERAL
 		"@typescript-eslint/no-empty-function": "warn",
 		"@typescript-eslint/no-throw-literal": "warn",
-		"@typescript-eslint/no-unused-vars-experimental": [ "warn", { ignoreArgsIfArgsAfterAreUsed: false } ],
 		"@typescript-eslint/no-unused-vars": [ "warn", { vars: "all", args: "after-used", ignoreRestSiblings: false } ],
 		"@typescript-eslint/no-var-requires": "warn",
 		"@typescript-eslint/prefer-for-of": "warn",
