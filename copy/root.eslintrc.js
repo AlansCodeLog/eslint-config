@@ -1,10 +1,14 @@
 module.exports ={
 	extends: [
-		// ./node_modules/@alanscodelog/eslint-config/.eslintrc.js
 		// https://github.com/AlansCodeLog/my-eslint-config
+		// extends:
+		// ./node_modules/@alanscodelog/eslint-config/js.js
+		// prev + ./node_modules/@alanscodelog/eslint-config/typescript.js (default)
+		// prev + ./node_modules/@alanscodelog/eslint-config/vue.js
+		// TOCONFIGURE
 		"@alanscodelog/eslint-config"
+		// add /js, /typescript, /vue for specific config
 	],
-	// TOCONFIGURE
 	rules: {
 		// I like to toggle these on occasionally, but otherwise keep them off
 		// "import/no-unused-modules": [ "warn", { unusedExports: true, missingExports: false /* interferes with ts */ } ],

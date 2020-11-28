@@ -15,9 +15,11 @@
 	],
 	"include": [
 		"src/**/*.ts",
+		"src/**/*.js",
 		// needed or eslint will complain when trying to lint them
 		"tests/**/*.ts",
 		"tests/**/*.js",
+		"*.js",
 	],
 	"exclude": [
 	]

@@ -5,9 +5,9 @@
 	"main": ".eslintrc.js",
 	"scripts": {
 		"print": "npx eslint --print-config .eslintrc.js",
-		"print:missing": "npm run print | grep -A10000 \"wrap-regex\"",
+		"show-unset" :"node tests/no_unset.js",
 		"lint:dev": "npx eslint \"src/**/*\" --max-warnings=0",
-		"test": "node tests/loads.js",
+		"test": "node tests/loads.js && npm run show-unset",
 		"lint:commits": "npx commitlint --from $(git rev-list HEAD --not --remotes | tail -1)^ --to HEAD --verbose",
 		"postinstall": "node postinstall.js"
 	},
@@ -24,9 +24,13 @@
 		"eslint": ">= 7.0.0",
 		"eslint-import-resolver-typescript": ">= 2.0.0",
 		"eslint-plugin-import": ">= 2.20.0",
-		"eslint-plugin-simple-import-sort": ">= 6.0.0"
+		"eslint-plugin-simple-import-sort": ">= 6.0.0",
+		"eslint-plugin-vue": ">=7.0.0",
+		"@vue/eslint-config-typescript": ">=7.0.0"
 	},
 	"devDependencies": {
+		"eslint-find-rules":"^3.6.1",
+
 		"typescript": ">=3.7",
 		"@typescript-eslint/eslint-plugin": ">= 4.0.0",
 		"@typescript-eslint/parser": ">= 4.0.0",
@@ -34,6 +38,8 @@
 		"eslint-import-resolver-typescript": ">= 2.0.0",
 		"eslint-plugin-import": ">= 2.20.0",
 		"eslint-plugin-simple-import-sort": ">= 6.0.0",
+		"eslint-plugin-vue": ">=7.0.0",
+		"@vue/eslint-config-typescript": ">=7.0.0",
 
 		"@alanscodelog/tsconfigs": "^2.1.1",
 
