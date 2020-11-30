@@ -1,17 +1,25 @@
+/**
+ * Just extending ts will only make the rules apply to ts files. We want them to also apply to vue files. This config will take care of disabling any rules that interfere.
+ */
+const ts_rules = require("./typescript").overrides[0].rules
+
+
 module.exports = {
+	extends: [
+		"./typescript",
+	],
 	overrides: [
 		{
 			files: ["**/*.vue"],
 			extends: [
 				"plugin:vue/vue3-essential",
 				"@vue/typescript",
-				"./typescript",
 			],
 			plugins: [
 				"vue",
 			],
 			rules: {
-
+				...ts_rules,
 				// #region INTERFERE
 				"@typescript-eslint/typedef": "off",
 				"import/no-default-export": ["off"],

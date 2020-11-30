@@ -1,9 +1,13 @@
 /**
-* ⚠️ means the rule has a typescript version is disabled in typescript files, but any changes to it should be "synced" with the typescript version.
-*/
+ * ⚠️ means the rule has a typescript version is disabled in typescript files, but any changes to it should be "synced" with the typescript version.
+ */
 module.exports = {
 	extends: [
 		"./base",
+	],
+	plugins: [
+		"import",
+		"simple-import-sort",
 	],
 	overrides: [
 		{
@@ -13,10 +17,6 @@ module.exports = {
 				ecmaVersion: 2021,
 				sourceType: "module",
 			},
-			plugins: [
-				"import",
-				"simple-import-sort",
-			],
 			rules: {
 				// #region IMPORTS
 				// note this does not have support for require
@@ -49,7 +49,11 @@ module.exports = {
 				"import/no-default-export": "warn",
 				"import/no-deprecated": "warn",
 				"import/no-duplicates": "warn",
-				"import/no-extraneous-dependencies": ["warn", { devDependencies: false, optionalDependencies: false, peerDependencies: false }],
+				"import/no-extraneous-dependencies": ["warn", {
+					devDependencies: ["src/**/*"],
+					optionalDependencies: ["src/**/*"],
+					peerDependencies: ["src/**/*"],
+				}],
 				"import/no-mutable-exports": "warn",
 				"import/no-named-as-default-member": "warn",
 				"import/no-named-as-default": "warn",
