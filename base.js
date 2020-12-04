@@ -7,14 +7,68 @@ module.exports = {
 	plugins: [
 		"import",
 		"simple-import-sort",
+		"jsdoc",
 	],
 	settings: {
 		"import/ignore": ["node_modules"],
+		jsdoc: {
+			mode: "jsdoc",
+			maxLines: 0,
+		},
 	},
 	/**
 	 * Technically could go in js config, but nicer to have these types of rules separated.
 	 */
 	rules: {
+		// #region JSDOC
+		/**
+		 * I barely use js anymore, so this is mostly to fix some of the most common jsdoc formatting problems.
+		 * There's a few extra ts specific rules in the typescript config, including actually requiring a jsdoc comment, which would otherwise be annoying to have to do with most of the few js files in my projects (usually small scripts or files that exist for odd reasons).
+		 */
+
+		"jsdoc/check-alignment": "warn",
+		"jsdoc/check-tag-names": "warn",
+		"jsdoc/empty-tags": "warn",
+		"jsdoc/newline-after-description": ["warn", "always"],
+		"jsdoc/no-bad-blocks": "warn",
+		"jsdoc/require-hyphen-before-param-description": ["warn", "never"],
+		// #region disabled
+		"jsdoc/check-access": "off",
+		"jsdoc/check-examples": "off",
+		"jsdoc/check-indentation": "off",
+		"jsdoc/check-line-alignment": "off",
+		"jsdoc/check-param-names": "off",
+		"jsdoc/check-property-names": "off",
+		"jsdoc/check-syntax": "off",
+		"jsdoc/check-types": "off",
+		"jsdoc/check-values": "off",
+		"jsdoc/implements-on-classes": "off",
+		"jsdoc/match-description": "off",
+		"jsdoc/no-defaults": "off",
+		"jsdoc/no-types": "off",
+		"jsdoc/no-undefined-types": "off",
+		"jsdoc/require-description": "off",
+		"jsdoc/require-description-complete-sentence": "off",
+		"jsdoc/require-example": "off",
+		"jsdoc/require-file-overview": "off",
+		"jsdoc/require-jsdoc": "off",
+		"jsdoc/require-param": "off",
+		"jsdoc/require-param-description": "off",
+		"jsdoc/require-param-name": "off",
+		"jsdoc/require-param-type": "off",
+		"jsdoc/require-property": "off",
+		"jsdoc/require-property-description": "off",
+		"jsdoc/require-property-name": "off",
+		"jsdoc/require-property-type": "off",
+		"jsdoc/require-returns": "off",
+		"jsdoc/require-returns-check": "off",
+		"jsdoc/require-returns-description": "off",
+		"jsdoc/require-returns-type": "off",
+		"jsdoc/require-throws": "off",
+		"jsdoc/valid-types": "off",
+		// #regionend
+		// #regionend
+
 		// #region IMPORTS
 		// note this does not have support for require
 		"simple-import-sort/imports": ["warn", {

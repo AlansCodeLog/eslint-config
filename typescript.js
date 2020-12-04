@@ -29,9 +29,44 @@ module.exports = {
 						alwaysTryTypes: true,
 					},
 				},
+				jsdoc: {
+					mode: "jsdoc",
+					tagNamePreference: {
+						link: {
+							message: "@link cannot be understood by typescript/vscode yet",
+							replacement: "see",
+						},
+					},
+				},
 			},
 			rules: {
 				...js_rules,
+				// #region JSDOC
+				"jsdoc/no-types": ["warn", { contexts: ["any"]}],
+				"jsdoc/require-description": ["warn", { descriptionStyle: "body" }],
+				"jsdoc/require-throws": "warn",
+				"jsdoc/require-jsdoc": "off",
+				// weird whitespace issues
+				// "jsdoc/require-jsdoc": ["warn", {
+				// 	publicOnly: true,
+				// 	contexts: [
+				// 		// can't combine these?
+				// 		"MethodDefinition:not([accessibility=\"private\"]) > FunctionExpression",
+				// 		"MethodDefinition[key.name!=\"constructor\"]",
+				// 		{ context: "ClassProperty", inlineCommentBlock: true },
+				// 	],
+				// 	enableFixer: false, // not working right
+				// 	require: {
+				// 		ArrowFunctionExpression: true,
+				// 		ClassDeclaration: true,
+				// 		ClassExpression: true,
+				// 		FunctionDeclaration: true,
+				// 		FunctionExpression: true,
+				// 		MethodDefinition: false,
+				// 	},
+				// }],
+				// #regionend
+
 				// #region IMPORTS
 				"@typescript-eslint/no-duplicate-imports": ["warn", { includeExports: false }], // ⭐
 				// #regionend

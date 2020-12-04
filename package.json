@@ -26,6 +26,7 @@
 		"eslint-plugin-import": ">= 2.20.0",
 		"eslint-plugin-simple-import-sort": ">= 6.0.0",
 		"eslint-plugin-vue": ">=7.0.0",
+		"eslint-plugin-jsdoc":">=30.7.8",
 		"@vue/eslint-config-typescript": ">=7.0.0"
 	},
 	"devDependencies": {
@@ -39,6 +40,7 @@
 		"eslint-plugin-import": ">= 2.20.0",
 		"eslint-plugin-simple-import-sort": ">= 6.0.0",
 		"eslint-plugin-vue": ">=7.0.0",
+		"eslint-plugin-jsdoc":">=30.7.8",
 		"@vue/eslint-config-typescript": ">=7.0.0",
 
 		"@alanscodelog/tsconfigs": "^2.1.1",
