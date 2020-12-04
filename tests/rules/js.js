@@ -13,6 +13,7 @@ module.exports = {
 		...(js.overrides[0].extends ? js.overrides[0].extends : []),
 	].filter(entry => !exclude_extends.includes(entry)),
 	rules: {
+		...(base.rules ? base.rules : []),
 		...js.overrides[0].rules,
 	},
 }
