@@ -195,6 +195,7 @@ module.exports = {
 				"no-unreachable-loop": "warn",
 				"no-unreachable": "warn",
 				"no-unsafe-finally": "warn",
+				"no-unsafe-optional-chaining": "warn",
 				"no-unsafe-negation": "warn",
 				"no-unused-expressions": ["warn", { allowTernary: true }], // ⚠️
 				"no-unused-labels": "warn",

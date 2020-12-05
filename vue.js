@@ -37,6 +37,7 @@ module.exports = {
 					endTag: "never",
 					selfClosingTag: "never",
 				}],
+				"vue/custom-event-name-casing": "warn",
 				"vue/html-end-tags": ["warn"],
 				"vue/html-indent": ["warn", "tab", {
 					attribute: 1,
@@ -73,6 +74,7 @@ module.exports = {
 				"vue/no-template-shadow": ["warn"],
 				"vue/one-component-per-file": ["warn"],
 				"vue/prop-name-casing": ["warn", "snake_case"],
+
 				"vue/require-default-prop": ["warn"],
 				"vue/require-explicit-emits": ["warn"],
 				"vue/require-prop-types": ["warn"],
