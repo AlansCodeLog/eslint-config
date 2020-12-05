@@ -6,9 +6,9 @@
 	"scripts": {
 		"print": "npx eslint --print-config .eslintrc.js",
 		"show-unset" :"node tests/no_unset.js",
-		"lint:dev": "npx eslint \"src/**/*\" --max-warnings=0",
-		"test": "node tests/loads.js && npm run show-unset",
+		"lint:eslint": "npx eslint --max-warnings=0 --report-unused-disable-directives",
 		"lint:commits": "npx commitlint --from $(git rev-list HEAD --not --remotes | tail -1)^ --to HEAD --verbose",
+		"test": "node tests/loads.js && npm run show-unset",
 		"postinstall": "node postinstall.js"
 	},
 	"husky": {
@@ -25,8 +25,8 @@
 		"eslint-import-resolver-typescript": ">= 2.0.0",
 		"eslint-plugin-import": ">= 2.20.0",
 		"eslint-plugin-simple-import-sort": ">= 6.0.0",
-		"eslint-plugin-vue": ">=7.0.0",
 		"eslint-plugin-jsdoc":">=30.7.8",
+		"eslint-plugin-vue": ">=7.0.0",
 		"@vue/eslint-config-typescript": ">=7.0.0"
 	},
 	"devDependencies": {
@@ -39,8 +39,8 @@
 		"eslint-import-resolver-typescript": ">= 2.0.0",
 		"eslint-plugin-import": ">= 2.20.0",
 		"eslint-plugin-simple-import-sort": ">= 6.0.0",
-		"eslint-plugin-vue": ">=7.0.0",
 		"eslint-plugin-jsdoc":">=30.7.8",
+		"eslint-plugin-vue": ">=7.0.0",
 		"@vue/eslint-config-typescript": ">=7.0.0",
 
 		"@alanscodelog/tsconfigs": "^2.1.1",
@@ -68,9 +68,7 @@
 		"copy"
 	],
 	"eslintIgnore": [
-		"copy/*",
-		"tests.js",
-		"postinstall.js"
+		"copy/*"
 	],
 	"release": { "extends": [ "@alanscodelog/semantic-release-config" ] },
 	"commitlint": { "extends": [ "@alanscodelog" ] },
@@ -81,7 +79,8 @@
 		"scripts": {
 			"lint:commits": "Lints all unpushed commits in the active branch."
 		}
-	 },
+	},
+	"TEMPLATE:4df5c37": "Ignore. Commit of the template this was created with / last updated to.",
 	"publishConfig": {
 		"access": "public"
 	}

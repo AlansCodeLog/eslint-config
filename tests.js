@@ -1,4 +1,4 @@
-module.exports ={
+module.exports = {
 	rules: {
 		"import/no-unused-modules": "off",
 		"import/no-extraneous-dependencies": "off",
@@ -14,5 +14,5 @@ module.exports ={
 		"no-console": "off",
 		"no-shadow": "off",
 		"no-unused-expressions": "off",
-	}
+	},
 }

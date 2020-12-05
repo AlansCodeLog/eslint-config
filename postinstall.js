@@ -1,3 +1,6 @@
+/* eslint-disable */
+/* We need the octal escapes, this will not run in strict mode. */
+
 let yellow = "\x1b[33m"
 let reset = "\033[0m"
 let message = yellow +
