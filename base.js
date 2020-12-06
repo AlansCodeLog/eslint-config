@@ -27,7 +27,8 @@ module.exports = {
 		 */
 
 		"jsdoc/check-alignment": "warn",
-		"jsdoc/check-tag-names": "warn",
+		// exceptions are for typedoc plugin
+		"jsdoc/check-tag-names": ["warn", { definedTags: ["packageDocumentation", "module"]}],
 		"jsdoc/empty-tags": "warn",
 		"jsdoc/newline-after-description": ["warn", "always"],
 		"jsdoc/no-bad-blocks": "warn",
