@@ -24,16 +24,18 @@ module.exports = {
 		/**
 		 * I barely use js anymore, so this is mostly to fix some of the most common jsdoc formatting problems.
 		 * There's a few extra ts specific rules in the typescript config, including actually requiring a jsdoc comment, which would otherwise be annoying to have to do with most of the few js files in my projects (usually small scripts or files that exist for odd reasons).
+		 *
+		 * #awaiting tsdoc to be the standard so we can use the tsdoc eslint plugin
 		 */
 
 		"jsdoc/check-alignment": "warn",
 		// exceptions are for typedoc plugin
-		"jsdoc/check-tag-names": ["warn", { definedTags: ["packageDocumentation", "module"]}],
-		"jsdoc/empty-tags": "warn",
+		"jsdoc/check-tag-names": ["warn", { definedTags: ["packageDocumentation", "env", "internal"]}],
 		"jsdoc/newline-after-description": ["warn", "always"],
 		"jsdoc/no-bad-blocks": "warn",
 		"jsdoc/require-hyphen-before-param-description": ["warn", "never"],
 		// #region disabled
+		"jsdoc/empty-tags": "off", // dangerous auto-fix
 		"jsdoc/check-access": "off",
 		"jsdoc/check-examples": "off",
 		"jsdoc/check-indentation": "off",

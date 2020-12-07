@@ -117,21 +117,19 @@ module.exports = {
 
 				// #region STYLE - NAMING
 				"@typescript-eslint/naming-convention": ["warn",
-					// { filter: "exception|exception2" }
-					{ selector: "default", format: ["snake_case"], leadingUnderscore: "allow", trailingUnderscore: "allow" },
+					{ selector: "default", format: ["snake_case"], leadingUnderscore: "allowSingleOrDouble", trailingUnderscore: "allowSingleOrDouble" },
 					{ selector: "variable", format: ["snake_case", "UPPER_CASE"], leadingUnderscore: "allow", trailingUnderscore: "allow" },
-					{ selector: "memberLike", modifiers: ["private"], format: ["snake_case"], leadingUnderscore: "allow", trailingUnderscore: "allow" },
 
-					// future awaiting https://github.com/typescript-eslint/typescript-eslint/issues/1712
-					// todo soon !
-					// { selector: "memberLike", modifiers: [ "private" ], format: [ "snake_case" ], leadingUnderscore: "allow", trailingUnderscore: "allow", allowDouble: true },
-					// allows double underscore private functions to bypass naming conventions temporarily
-					// format: [] = allows anything
-					{ filter: "__", selector: "memberLike", format: [], modifiers: ["private"]},
+					// allow leading underscore to be of any format
+					{ selector: "memberLike", format: null, leadingUnderscore: "allowSingleOrDouble", filter: { match: true, regex: "_|__" } },
+					// leading forbid is just so they match the above instead
+					{ selector: "memberLike", modifiers: ["private"], format: ["snake_case"], leadingUnderscore: "forbid", trailingUnderscore: "forbid" },
+					{ selector: "memberLike", modifiers: ["public"], format: ["camelCase"], leadingUnderscore: "forbid", trailingUnderscore: "forbid" },
 
-					{ selector: "memberLike", modifiers: ["public"], format: ["camelCase"]},
 					{ selector: "typeLike", format: ["PascalCase"], leadingUnderscore: "allow", trailingUnderscore: "allow" },
 					{ selector: "property", format: null, leadingUnderscore: "allow", trailingUnderscore: "allow" },
+					{ selector: "typeProperty", format: null, leadingUnderscore: "allow", trailingUnderscore: "allow" },
+					{ selector: "objectLiteralProperty", format: null, leadingUnderscore: "allow", trailingUnderscore: "allow" },
 					{ selector: "enum", format: ["UPPER_CASE"], leadingUnderscore: "allow", trailingUnderscore: "allow" },
 					{ selector: "enumMember", format: ["UPPER_CASE", "PascalCase", "snake_case"], leadingUnderscore: "allow", trailingUnderscore: "allow" },
 					{ selector: "typeParameter", format: ["PascalCase"], prefix: ["T"]}],
@@ -205,7 +203,6 @@ module.exports = {
 				// #region UNSAFE / ERROR PRONE
 				"@typescript-eslint/await-thenable": "warn",
 				"@typescript-eslint/class-literal-property-style": "warn",
-				"@typescript-eslint/no-confusing-void-expression": ["warn", { ignoreArrowShorthand: false }],
 				"@typescript-eslint/default-param-last": "warn",
 				"@typescript-eslint/explicit-function-return-type": ["warn", { allowExpressions: true, allowTypedFunctionExpressions: true, allowHigherOrderFunctions: true }],
 				"@typescript-eslint/no-base-to-string": "warn",
@@ -234,7 +231,6 @@ module.exports = {
 				"@typescript-eslint/no-redeclare": ["warn", { ignoreDeclarationMerge: true }], // ⭐
 				"@typescript-eslint/no-shadow": ["warn", { ignoreTypeValueShadow: true, ignoreFunctionTypeParameterNameValueShadow: true }], // ⭐
 				"@typescript-eslint/no-unused-expressions": ["warn", { allowTernary: true }], // ⭐
-				"@typescript-eslint/no-unnecessary-condition": ["warn"],
 				"@typescript-eslint/prefer-optional-chain": "warn",
 				"@typescript-eslint/prefer-reduce-type-parameter": "warn",
 				"@typescript-eslint/prefer-string-starts-ends-with": "warn",
@@ -244,7 +240,6 @@ module.exports = {
 				"@typescript-eslint/restrict-plus-operands": ["warn", { checkCompoundAssignments: true }],
 				"@typescript-eslint/restrict-template-expressions": ["warn", { allowNumber: true, allowBoolean: true, allowAny: true }],
 				"@typescript-eslint/return-await": "warn",
-				"@typescript-eslint/strict-boolean-expressions": ["warn", { allowNullableBoolean: true }],
 				"@typescript-eslint/switch-exhaustiveness-check": "warn",
 				// #regionend
 
@@ -288,6 +283,7 @@ module.exports = {
 				"@typescript-eslint/interface-name-prefix": "off",
 				"@typescript-eslint/member-ordering": "off",
 				"@typescript-eslint/method-signature-style": "off",
+				"@typescript-eslint/no-confusing-void-expression": ["off", { ignoreArrowShorthand: false }], // annoying
 				"@typescript-eslint/no-dynamic-delete": "off",
 				"@typescript-eslint/no-explicit-any": "off",
 				"@typescript-eslint/no-extra-parens": "off",
@@ -297,6 +293,7 @@ module.exports = {
 				"@typescript-eslint/no-non-null-assertion": "off",
 				"@typescript-eslint/no-type-alias": "off",
 				"@typescript-eslint/unbound-method": ["off", { ignoreStatic: true }], // giving weird errors
+				"@typescript-eslint/no-unnecessary-condition": ["off"], // too many false positives
 				"@typescript-eslint/no-unnecessary-type-arguments": "off",
 				"@typescript-eslint/no-unsafe-assignment": "off",
 				"@typescript-eslint/no-unsafe-call": "off",
@@ -306,6 +303,7 @@ module.exports = {
 				"@typescript-eslint/prefer-readonly-parameter-types": "off", // getting weird false positives
 				"@typescript-eslint/prefer-regexp-exec": "off",
 				"@typescript-eslint/require-array-sort-compare": "off",
+				"@typescript-eslint/strict-boolean-expressions": ["off", { allowNullableBoolean: true }], // useful but sometimes nags where imo it shouldn't
 				// #endregion
 			},
 		},

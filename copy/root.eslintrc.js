@@ -7,35 +7,46 @@ module.exports = {
 		// prev + ./node_modules/@alanscodelog/eslint-config/typescript.js (default)
 		// prev + ./node_modules/@alanscodelog/eslint-config/vue.js
 		// TOCONFIGURE
-		"@alanscodelog/eslint-config"
+		"@alanscodelog/eslint-config",
 		// add /js, /typescript, /vue for specific config
 	],
+	// TOCONFIGURE
+	// for vscode, so it doesn't try to lint files in here when we open them
 	ignorePatterns: [
+		"coverage",
+		"dist",
+		"bin", // remove if not cli "dist" dir
+		"docs",
 	],
 	rules: {
 	},
 	// TOCONFIGURE
+	// 🟠 - I like to toggle these on occasionally, but otherwise keep off
 	overrides: [
 		// Eslint: https://eslint.org/docs/rules/
-		{ files: [ "bin/*.js" ], parserOptions: {sourceType: "script"}, },
+		{ files: ["bin/*.js"], parserOptions: { sourceType: "script" } },
 		{
-			files: [ "**/*.js", "**/*.ts" ],
+			files: ["**/*.js", "**/*.ts", "**/.vue"],
 			rules: {
-				// like to toggle this on occasionally, but otherwise keep off
-				// "import/no-unused-modules": [ "warn", { unusedExports: true, missingExports: false }]
-			}
+				// "import/no-unused-modules": [ "warn", { unusedExports: true, missingExports: false }] // 🟠
+				// CAREFUL: the auto fix for this one is dangerous and can remove documentation if just added to a project that has errors for it
+				// "jsdoc/empty-tags": "warn", // 🟠
+			},
 		},
 		// Typescript: https://github.com/typescript-eslint/typescript-eslint/master/packages/eslint-plugin#supported-rules
 		{
-			files: [ "**/*.ts", "**/*.vue"],
+			files: ["**/*.ts", "**/*.vue"],
 			rules: {
-			}
+				// "@typescript-eslint/strict-boolean-expressions": ["warn", {allowNullableBoolean: true}], // 🟠
+				// "@typescript-eslint/no-unnecessary-condition": "warn", // 🟠
+				// "@typescript-eslint/no-confusing-void-expression": "warn", // 🟠
+			},
 		},
 		// Vue: https://eslint.vuejs.org/rules/
 		{
-			files: [ "**/*.vue"],
+			files: ["**/*.vue"],
 			rules: {
-			}
-		}
-	]
+			},
+		},
+	],
 }

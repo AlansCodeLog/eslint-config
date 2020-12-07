@@ -1,12 +1,12 @@
 module.exports = {
 	root: false,
 	env: {
-		jest: false,
+		jest: true,
 	},
 	extends: [
 		// ./node_modules/@alanscodelog/eslint-config/tests.js
 		"@alanscodelog/eslint-config/tests",
 	],
 	rules: {
-	}
+	},
 }
