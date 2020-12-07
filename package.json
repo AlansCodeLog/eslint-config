@@ -6,10 +6,10 @@
 	"scripts": {
 		"print": "npx eslint --print-config .eslintrc.js",
 		"show-unset" :"node tests/no_unset.js",
-		"lint:eslint": "npx eslint --max-warnings=0 --report-unused-disable-directives",
+		"lint:eslint": "npx eslint \"{src,tests,copy}/**/*.{js,ts}\" \"*.{js,ts}\" --max-warnings=0 --report-unused-disable-directives",
 		"lint:commits": "npx commitlint --from $(git rev-list HEAD --not --remotes | tail -1)^ --to HEAD --verbose",
 		"test": "node tests/loads.js && npm run show-unset",
-		"postinstall": "node postinstall.js"
+		"postinstall": "node copy/postinstall.js"
 	},
 	"husky": {
 		"hooks": {
@@ -68,11 +68,9 @@
 		"vue.js",
 		"tests.js",
 		"install.sh",
-		"postinstall.js",
 		"copy"
 	],
 	"eslintIgnore": [
-		"copy/*"
 	],
 	"release": { "extends": [ "@alanscodelog/semantic-release-config" ] },
 	"commitlint": { "extends": [ "@alanscodelog" ] },

@@ -1,6 +1,5 @@
 /** Temporary until eslint-find-rules supports overrides. */
 // future awaiting https://github.com/sarbbottam/eslint-find-rules/issues/317
-/* eslint-disable no-console */
 const _exec = require("child_process").exec
 const promisify = require("util").promisify
 

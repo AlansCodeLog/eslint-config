@@ -78,7 +78,7 @@ Each sets it's rules in an overrides with the correct file glob.
 
 And each (except test and base) extends from the previous (e.g. js = base + js, typescript = js (which includes base) + typescript and so on).
 
-Test is just a config that disables rules and does not extend from the other configs.
+Test is just a config that disables rules and does not extend from the other configs but since it's meant to be in the tests directory and has `root: false` it technically does.
 
 # Other
 
