@@ -1,3 +1,30 @@
+const fs = require("fs")
+const path = require("path")
+
+
+let aliases = []
+if (fs.existsSync("./tsconfig.json")) {
+	try {
+		// eslint-disable-next-line import/no-extraneous-dependencies
+		const tsc = require("typescript")
+		const tsconfig = tsc.readConfigFile("tsconfig.json", tsc.sys.readFile)
+		const compilerOptions = tsconfig.config.compilerOptions
+		if (compilerOptions && compilerOptions.paths) {
+			for (let alias of Object.keys(compilerOptions.paths)) {
+				if (!compilerOptions.paths[alias][0].startsWith("node_modules")) {
+					aliases.push(`^${alias.replace(/\/\*.*/, "")}`)
+				}
+			}
+		}
+	} catch (e) {
+		// eslint-disable-next-line no-console
+		console.log(`@alanscodelog/eslint-config detected a typescript config to read path aliases from at "${path.resolve("./tsconfig.json")}" but encountered an error attempting to read it. Linting will continue but tsconfig path aliases will not be added to "simple-import-sort/imports", this might result in invalid lint errors.`)
+		// eslint-disable-next-line no-console
+		console.log(e)
+	}
+}
+
+
 module.exports = {
 	env: {
 		node: true,
@@ -75,20 +102,23 @@ module.exports = {
 		// #region IMPORTS
 		// note this does not have support for require
 		"simple-import-sort/imports": ["warn", {
+			// see https://github.com/lydell/eslint-plugin-simple-import-sort/#custom-grouping
 			groups: [
 				// Side effect imports.
 				["^\\u0000"],
 				// Packages.
-				// Things that start with a letter (or digit or underscore), or `@` followed by a letter.
 				["^@?\\w"],
-				// Relative imports.
-				// Anything that starts with a dot.
+				// Sibling file.
 				["^\\./"],
-				// Absolute imports and other imports such as Vue-style `@/foo`.
-				// Anything that does not start with a dot.
-				["^[^.]"],
+				[
+					// Absolute imports and other imports such as Vue-style `@/foo`.
+					// Anything that does not start with a dot.
+					"^[^.]",
+					// moves non-node_modules aliases to be with the rest of the aliases
+					...aliases,
+				],
 				// Relative imports.
-				// Anything that starts with a dot.
+				// These are technically banned by "no-restricted-imports" below.
 				["^\\../"],
 			],
 		}],
