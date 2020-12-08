@@ -19,6 +19,7 @@ typescript \
 eslint-import-resolver-typescript \
 eslint-plugin-simple-import-sort \
 eslint-plugin-import \
+eslint-plugin-jsdoc \
 && ./node_modules/@alanscodelog/eslint-config/install.sh \
 ```
 
@@ -35,6 +36,7 @@ typescript \
 eslint-import-resolver-typescript \
 eslint-plugin-simple-import-sort \
 eslint-plugin-import \
+eslint-plugin-jsdoc \
 eslint-plugin-vue \
 @vue/eslint-config-typescript \
 && ./node_modules/@alanscodelog/eslint-config/install.sh \
@@ -47,10 +49,9 @@ Just js (untested):
 yarn add -D \
 @alanscodelog/eslint-config \
 eslint \
-typescript \
 eslint-plugin-simple-import-sort \
 eslint-plugin-import \
-eslint-plugin-vue \
+eslint-plugin-jsdoc \
 && ./node_modules/@alanscodelog/eslint-config/install.sh \
 ```
 </details>

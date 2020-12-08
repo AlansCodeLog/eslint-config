@@ -17,7 +17,7 @@ module.exports = {
 		},
 	},
 	/**
-	 * Technically could go in js config, but nicer to have these types of rules separated.
+	 * Technically could go in js config, but nicer to have these types of rules separated. Mostly are plugin rules, except for some eslint import related rules marked // #eslint.
 	 */
 	rules: {
 		// #region JSDOC
@@ -115,13 +115,38 @@ module.exports = {
 		"import/no-namespace": "warn",
 		"import/no-useless-path-segments": ["warn", { noUselessIndex: true }],
 		"import/no-webpack-loader-syntax": "warn",
-		"no-duplicate-imports": ["warn", { includeExports: false }], // ⚠️
-		"no-restricted-imports": ["warn", {
+		"no-duplicate-imports": ["warn", { includeExports: false }], // ⚠️ // #eslint
+		"no-restricted-imports": ["warn", { // #eslint
 			patterns: ["../*"],
 			paths: [
 				{ name: "fs", importNames: ["default"], message: `Please use \`import { promises as fs } from "fs"\` instead, otherwise disable this warning if sync fs functions are needed.` },
 			],
 		}],
+
+		// #region UNUSED
+		"import/exports-last": "off",
+		"import/extensions": "off",
+		"import/first": "off",
+		"import/group-exports": "off",
+		"import/max-dependencies": "off",
+		"import/no-amd": "off",
+		"import/no-commonjs": "off",
+		"import/no-cycle": "off", // want but off because it complains when importing types and there's no way to whitelist them
+		"import/no-dynamic-require": "off",
+		"import/no-internal-modules": "off",
+		"import/no-named-export": "off",
+		"import/no-nodejs-modules": "off",
+		"import/no-relative-parent-imports": "off",
+		"import/no-restricted-paths": "off",
+		"import/no-self-import": "off",
+		"import/no-unassigned-import": "off",
+		"import/no-unresolved": "off", // gets annoying with custom resolve paths
+		"import/no-unused-modules": "off", // turned on manually when i want
+		"import/order": "off", // doesn't work properly (cant tell external from internal)
+		"import/prefer-default-export": "off",
+		"import/unambiguous": "off",
+		"simple-import-sort/exports": "off",
+		// #regionend
 		// #regionend
 	},
 }

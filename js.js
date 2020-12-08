@@ -235,27 +235,6 @@ module.exports = {
 				"id-length": "off",
 				"id-match": "off",
 				"implicit-arrow-linebreak": ["off", "beside"], // too annoying in certain situations
-				"import/exports-last": "off",
-				"import/extensions": "off",
-				"import/first": "off",
-				"import/group-exports": "off",
-				"import/max-dependencies": "off",
-				"import/no-amd": "off",
-				"import/no-commonjs": "off",
-				"import/no-cycle": "off", // want but off because it complains when importing types and there's no way to whitelist them
-				"import/no-dynamic-require": "off",
-				"import/no-internal-modules": "off",
-				"import/no-named-export": "off",
-				"import/no-nodejs-modules": "off",
-				"import/no-relative-parent-imports": "off",
-				"import/no-restricted-paths": "off",
-				"import/no-self-import": "off",
-				"import/no-unassigned-import": "off",
-				"import/no-unresolved": "off", // gets annoying with custom resolve paths
-				"import/no-unused-modules": "off", // turned on manually when i want
-				"import/order": "off", // doesn't work properly (cant tell external from internal)
-				"import/prefer-default-export": "off",
-				"import/unambiguous": "off",
 				indent: "off",
 				"init-declarations": "off",
 				"line-comment-position": "off",
@@ -314,7 +293,6 @@ module.exports = {
 				"require-atomic-updates": "off",
 				"require-unicode-regexp": "off",
 				"semi-style": "off",
-				"simple-import-sort/exports": "off",
 				"sort-imports": "off",
 				"sort-keys": "off",
 				"sort-vars": "off",
@@ -323,7 +301,6 @@ module.exports = {
 				"vars-on-top": "off",
 				"wrap-regex": "off",
 				// #regionend
-
 			},
 		},
 	],
