@@ -9,9 +9,9 @@ const exec = promisify(_exec)
 const folder = "./tests/rules"
 async function main() {
 	let missing = false
-	for (let file of ["js", "typescript", "vue"]) {
+	for (const file of ["js", "typescript", "vue"]) {
 		// eslint-disable-next-line no-await-in-loop
-		let { stdout, stderr } = await exec(`npx eslint-find-rules --unused --no-error ${folder}/${file}.js`)
+		const { stdout, stderr } = await exec(`npx eslint-find-rules --unused --no-error ${folder}/${file}.js`)
 			.catch(err => {
 				console.log(`\nError in ${file} Config:\n`)
 				console.log(err)
@@ -23,7 +23,7 @@ async function main() {
 			console.log(`\nError in ${file} Config:\n`, stderr)
 			process.exit(1)
 		}
-		let list = stdout
+		const list = stdout
 			.replace("unused rules", "")
 			.split(/\s+/)
 			.filter(line => line.trim() !== "")

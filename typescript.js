@@ -1,7 +1,7 @@
 /**
  * Just extending js will only make the rules apply to tjs files. We want them to also apply to typescript files. This config will take care of disabling any rules that interfere.
  */
-const js_rules = require("./js").overrides[0].rules
+const jsRules = require("./js").overrides[0].rules
 /**
  * ⭐ means the regular version of the rule needs to be disabled, but any changes to it should be "synced" with the js version.
  */

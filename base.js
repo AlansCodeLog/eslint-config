@@ -2,7 +2,7 @@ const fs = require("fs")
 const path = require("path")
 
 
-let aliases = []
+const aliases = []
 if (fs.existsSync("./tsconfig.json")) {
 	try {
 		// eslint-disable-next-line import/no-extraneous-dependencies
@@ -10,7 +10,7 @@ if (fs.existsSync("./tsconfig.json")) {
 		const tsconfig = tsc.readConfigFile("tsconfig.json", tsc.sys.readFile)
 		const compilerOptions = tsconfig.config.compilerOptions
 		if (compilerOptions && compilerOptions.paths) {
-			for (let alias of Object.keys(compilerOptions.paths)) {
+			for (const alias of Object.keys(compilerOptions.paths)) {
 				if (!compilerOptions.paths[alias][0].startsWith("node_modules")) {
 					aliases.push(`^${alias.replace(/\/\*.*/, "")}`)
 				}
