@@ -84,6 +84,7 @@ module.exports = {
 				// #regionend
 
 				// #region PREFERENCE - GENERAL
+				camelcase: "warn",
 				"default-case-last": "warn",
 				eqeqeq: ["warn", "always"],
 				"guard-for-in": "warn",
@@ -218,7 +219,6 @@ module.exports = {
 				// kept for reference and also `show-unset` script
 				"array-callback-return": "off",
 				"block-spacing": "off",
-				camelcase: "off",
 				"capitalized-comments": "off",
 				"class-methods-use-this": "off",
 				"comma-style": "off",

@@ -9,13 +9,13 @@ const eslint = new ESLint()
 eslint.lintFiles("tests/fixtures/**/*")
 	.then(async results => {
 		const formatter = await eslint.loadFormatter()
-		const pretty_res = formatter.format(results)
-		console.log(pretty_res)
+		const prettyRes = formatter.format(results)
+		console.log(prettyRes)
 
-		const has_problems = results.find(res => res.errorCount > 0 || res.usedDeprecatedRules.length > 0) !== undefined
-		const has_deprecated_rules = results.find(res => res.usedDeprecatedRules.length > 0) !== undefined
+		const hasProblems = results.find(res => res.errorCount > 0 || res.usedDeprecatedRules.length > 0) !== undefined
+		const hasDeprecatedRules = results.find(res => res.usedDeprecatedRules.length > 0) !== undefined
 
-		if (has_deprecated_rules) {
+		if (hasDeprecatedRules) {
 			console.log("The following rules are deprecated:\n")
 
 			for (const res of results) {
@@ -29,5 +29,5 @@ eslint.lintFiles("tests/fixtures/**/*")
 			// give the errors some space
 			console.log("")
 		}
-		if (has_problems) process.exit(1)
+		if (hasProblems) process.exit(1)
 	})

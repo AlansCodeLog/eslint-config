@@ -19,7 +19,7 @@ module.exports = {
 				"vue",
 			],
 			rules: {
-				...ts_rules,
+				...tsRules,
 				// #region INTERFERE
 				"@typescript-eslint/typedef": "off",
 				"import/no-default-export": ["off"],
@@ -73,7 +73,7 @@ module.exports = {
 				"vue/no-spaces-around-equal-signs-in-attribute": ["warn"],
 				"vue/no-template-shadow": ["warn"],
 				"vue/one-component-per-file": ["warn"],
-				"vue/prop-name-casing": ["warn", "snake_case"],
+				"vue/prop-name-casing": ["warn", "camelCase"],
 
 				"vue/require-default-prop": ["warn"],
 				"vue/require-explicit-emits": ["warn"],

@@ -5,6 +5,13 @@ const jsRules = require("./js").overrides[0].rules
 /**
  * ⭐ means the regular version of the rule needs to be disabled, but any changes to it should be "synced" with the js version.
  */
+
+const allowAnyUnderscores = { leadingUnderscore: "allowSingleOrDouble", trailingUnderscore: "allowSingleOrDouble" }
+const allowSingleUnderscores = { leadingUnderscore: "allow", trailingUnderscore: "allow" }
+const forbidUnderscores = { leadingUnderscore: "forbid", trailingUnderscore: "forbid" }
+const requireLeadingUnderscore = { leadingUnderscore: "require", trailingUnderscore: "allow" }
+/** Prevents underscore only identifiers from matching so they match the null rule instead and aren't checked */
+const fixExceptions = { filter: { regex: "^(_+?|_constructor|_mixin)$", match: false } }
 module.exports = {
 	extends: [
 		"./js",
@@ -40,7 +47,7 @@ module.exports = {
 				},
 			},
 			rules: {
-				...js_rules,
+				...jsRules,
 				// #region JSDOC
 				"jsdoc/no-types": ["warn", { contexts: ["any"]}],
 				"jsdoc/require-description": ["warn", { descriptionStyle: "body" }],
@@ -117,22 +124,25 @@ module.exports = {
 
 				// #region STYLE - NAMING
 				"@typescript-eslint/naming-convention": ["warn",
-					{ selector: "default", format: ["snake_case"], leadingUnderscore: "allowSingleOrDouble", trailingUnderscore: "allowSingleOrDouble" },
-					{ selector: "variable", format: ["snake_case", "UPPER_CASE"], leadingUnderscore: "allow", trailingUnderscore: "allow" },
+					{ selector: ["default"], format: null, ...allowAnyUnderscores, filter: { ...fixExceptions.filter, match: true } },
+					{ selector: ["default"], format: ["strictCamelCase"], ...allowSingleUnderscores, ...fixExceptions },
 
-					// allow leading underscore to be of any format
-					{ selector: "memberLike", format: null, leadingUnderscore: "allowSingleOrDouble", filter: { match: true, regex: "_|__" } },
-					// leading forbid is just so they match the above instead
-					{ selector: "memberLike", modifiers: ["private"], format: ["snake_case"], leadingUnderscore: "forbid", trailingUnderscore: "forbid" },
-					{ selector: "memberLike", modifiers: ["public"], format: ["camelCase"], leadingUnderscore: "forbid", trailingUnderscore: "forbid" },
+					{ selector: ["enumMember", "typeProperty"], format: ["strictCamelCase", "UPPER_CASE"], ...allowSingleUnderscores, ...fixExceptions },
 
-					{ selector: "typeLike", format: ["PascalCase"], leadingUnderscore: "allow", trailingUnderscore: "allow" },
-					{ selector: "property", format: null, leadingUnderscore: "allow", trailingUnderscore: "allow" },
-					{ selector: "typeProperty", format: null, leadingUnderscore: "allow", trailingUnderscore: "allow" },
-					{ selector: "objectLiteralProperty", format: null, leadingUnderscore: "allow", trailingUnderscore: "allow" },
-					{ selector: "enum", format: ["UPPER_CASE"], leadingUnderscore: "allow", trailingUnderscore: "allow" },
-					{ selector: "enumMember", format: ["UPPER_CASE", "PascalCase", "snake_case"], leadingUnderscore: "allow", trailingUnderscore: "allow" },
-					{ selector: "typeParameter", format: ["PascalCase"], prefix: ["T"]}],
+					// currently properties passed to other functions are checked when they shouldn't be
+					// https://github.com/typescript-eslint/typescript-eslint/issues/2244
+					// this lets all properties by-pass that since the type declarations are already enforced above
+					{ selector: ["objectLiteralProperty", "property"], format: null, ...allowAnyUnderscores, ...fixExceptions },
+
+					{ selector: "variable", format: ["strictCamelCase", "UPPER_CASE"], ...allowSingleUnderscores, ...fixExceptions },
+
+					{ selector: "memberLike", modifiers: ["private"], format: ["camelCase"], ...requireLeadingUnderscore, ...fixExceptions },
+					{ selector: "memberLike", modifiers: ["public"], format: ["camelCase"], ...forbidUnderscores, ...fixExceptions },
+
+					{ selector: "typeLike", format: ["StrictPascalCase"], ...forbidUnderscores },
+					{ selector: "typeParameter", format: ["StrictPascalCase"], prefix: ["T"], ...forbidUnderscores },
+					// UPPER_Maybe_PascalCase...
+					{ selector: "enum", format: null, custom: { match: true, regex: "^(?<UPPER_Maybe_PascalCase>(?!_[a-z])_*[A-Za-z]+(?!_[a-z])_*)+$" }, ...allowSingleUnderscores }],
 				// #regionend
 
 				// #region STYLE - WHITESPACE

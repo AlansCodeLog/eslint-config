@@ -2,7 +2,7 @@ const js = require("./js")
 const typescript = require("../../typescript")
 
 
-const exclude_extends = ["./js", "./base", "./typescript", "./vue"]
+const excludeExtends = ["./js", "./base", "./typescript", "./vue"]
 module.exports = {
 	plugins: [
 		...js.plugins,
@@ -11,7 +11,7 @@ module.exports = {
 	extends: [
 		...js.extends,
 		...(typescript.overrides[0].extends ? typescript.overrides[0].extends : []),
-	].filter(entry => !exclude_extends.includes(entry)),
+	].filter(entry => !excludeExtends.includes(entry)),
 	rules: {
 		...js.rules,
 		...typescript.overrides[0].rules,
