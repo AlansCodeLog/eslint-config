@@ -1,6 +1,7 @@
 module.exports = {
+	root: false,
 	extends: [
-		"./typescript",
+		"../tests",
 	],
 	rules: {
 	},

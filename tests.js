@@ -1,4 +1,4 @@
-module.exports ={
+module.exports = {
 	rules: {
 		"import/no-unused-modules": "off",
 		"import/no-extraneous-dependencies": "off",
@@ -9,10 +9,9 @@ module.exports ={
 		"@typescript-eslint/no-unused-expressions": "off",
 		"@typescript-eslint/no-empty-function": "off",
 		"@typescript-eslint/explicit-function-return-type": "off",
-
 		"no-new": "off",
 		"no-console": "off",
 		"no-shadow": "off",
 		"no-unused-expressions": "off",
-	}
+	},
 }
