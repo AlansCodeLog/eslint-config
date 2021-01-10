@@ -114,6 +114,7 @@ module.exports = {
 				"@typescript-eslint/prefer-enum-initializers": "warn",
 				"@typescript-eslint/prefer-literal-enum-member": "off",
 				"@typescript-eslint/no-unnecessary-type-constraint": "warn",
+				"@typescript-eslint/non-nullable-type-assertion-style": "warn",
 				// #regionend
 
 				// #region STYLE - CLASS RELATED
@@ -302,7 +303,6 @@ module.exports = {
 				"@typescript-eslint/no-magic-numbers": "off",
 				"@typescript-eslint/no-non-null-assertion": "off",
 				"@typescript-eslint/no-type-alias": "off",
-				"@typescript-eslint/unbound-method": ["off", { ignoreStatic: true }], // giving weird errors
 				"@typescript-eslint/no-unnecessary-condition": ["off"], // too many false positives
 				"@typescript-eslint/no-unnecessary-type-arguments": "off",
 				"@typescript-eslint/no-unsafe-assignment": "off",
@@ -313,7 +313,9 @@ module.exports = {
 				"@typescript-eslint/prefer-readonly-parameter-types": "off", // getting weird false positives
 				"@typescript-eslint/prefer-regexp-exec": "off",
 				"@typescript-eslint/require-array-sort-compare": "off",
+				"@typescript-eslint/sort-type-union-intersection-members": "off", // often my ordering has some logic
 				"@typescript-eslint/strict-boolean-expressions": ["off", { allowNullableBoolean: true }], // useful but sometimes nags where imo it shouldn't
+				"@typescript-eslint/unbound-method": ["off", { ignoreStatic: true }], // giving weird errors
 				// #endregion
 			},
 		},
