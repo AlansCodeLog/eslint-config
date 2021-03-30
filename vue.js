@@ -86,12 +86,13 @@ module.exports = {
 					math: "always",
 				}],
 				"vue/html-end-tags": ["warn"],
+				"vue/next-tick-style": ["warn", "promise"],
 				"vue/no-spaces-around-equal-signs-in-attribute": ["warn"],
 				"vue/one-component-per-file": ["warn"],
 				// #regionend
 
 				// #region ORDER
-				"vue/attributes-order": ["error", {
+				"vue/attributes-order": ["warn", {
 					order: [
 						"CONDITIONALS",
 						"GLOBAL",
@@ -107,10 +108,10 @@ module.exports = {
 					],
 					alphabetical: false,
 				}],
-				"vue/component-tags-order": ["error", {
+				"vue/component-tags-order": ["warn", {
 					order: [["docs", "template", "script"], "style"],
 				}],
-				"vue/order-in-components": ["error", {
+				"vue/order-in-components": ["warn", {
 					order: [
 						"el",
 						"name",
@@ -150,6 +151,11 @@ module.exports = {
 				// #regionend
 
 				// #region ERROR PRONE
+				"vue/html-button-has-type": ["warn", {
+					button: true,
+					submit: true,
+					reset: true,
+				}],
 				"vue/no-restricted-custom-event": ["warn", {
 					event: "input",
 					message: "If you intend a prop for v-model, it should be 'update:modelValue' in Vue 3.",
@@ -160,15 +166,15 @@ module.exports = {
 					message: "If you intend a prop for v-model, it should be 'modelValue' in Vue 3.",
 					suggest: "modelValue",
 				}],
+				"vue/no-constant-condition": ["warn"],
 				"vue/no-template-shadow": ["warn"],
 				"vue/require-default-prop": ["warn"],
 				"vue/require-explicit-emits": ["warn"],
 				"vue/require-prop-types": ["warn"],
 				"vue/no-multiple-slot-args": ["warn"],
-				"vue/no-lone-template": ["warn", {
-					ignoreAccessible: false,
-				}],
+				"vue/no-lone-template": ["warn", { ignoreAccessible: false }],
 				"vue/this-in-template": ["warn", "never"],
+				"vue/valid-next-tick": ["warn"],
 				// #regionend
 
 
@@ -244,7 +250,7 @@ module.exports = {
 				"vue/v-for-delimiter-style": "off",
 				"vue/v-on-function-call": "off",
 				"vue/valid-v-bind-sync": "off",
-				// #endregion
+				// #regionend
 			},
 		},
 	],

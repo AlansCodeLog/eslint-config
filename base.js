@@ -95,6 +95,8 @@ module.exports = {
 		"jsdoc/require-returns-description": "off",
 		"jsdoc/require-returns-type": "off",
 		"jsdoc/require-throws": "off",
+		"jsdoc/require-yields": "off",
+		"jsdoc/require-yields-check": "off",
 		"jsdoc/valid-types": "off",
 		// #regionend
 		// #regionend

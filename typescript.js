@@ -85,7 +85,6 @@ module.exports = {
 						parameterProperties: "off",
 					},
 				}],
-				"@typescript-eslint/consistent-indexed-object-style": ["warn", "record"],
 				"@typescript-eslint/member-delimiter-style": ["warn", {
 					multiline: {
 						delimiter: "none",
@@ -107,6 +106,7 @@ module.exports = {
 					propertyDeclaration: true,
 				}],
 				"@typescript-eslint/array-type": "warn",
+				"@typescript-eslint/consistent-indexed-object-style": ["warn", "record"],
 				"@typescript-eslint/consistent-type-assertions": "warn",
 				"@typescript-eslint/consistent-type-definitions": ["warn", "type"],
 				"@typescript-eslint/no-parameter-properties": "warn",
@@ -167,7 +167,7 @@ module.exports = {
 					],
 				}],
 				"@typescript-eslint/type-annotation-spacing": "warn",
-
+				"@typescript-eslint/object-curly-spacing": ["warn", "always", { objectsInObjects: true, arraysInObjects: false }], // ⭐
 				"@typescript-eslint/brace-style": ["warn", "1tbs", { allowSingleLine: true }], // ⭐
 				"@typescript-eslint/comma-dangle": ["warn", "always-multiline"], // ⭐
 				"@typescript-eslint/comma-spacing": ["warn", { before: false, after: true }], // ⭐
@@ -185,7 +185,7 @@ module.exports = {
 
 				// #region STYLE - FUNCTIONS
 				"@typescript-eslint/no-array-constructor": "warn",
-				// #endregion
+				// #regionend
 
 				// #region STYLE - OBJECTS / ARRAYS
 				"@typescript-eslint/dot-notation": "warn",
@@ -208,7 +208,7 @@ module.exports = {
 				"@typescript-eslint/triple-slash-reference": "warn",
 				"@typescript-eslint/unified-signatures": "warn",
 				"@typescript-eslint/ban-ts-comment": ["warn", { "ts-expect-error": "allow-with-description", "ts-nocheck": "allow-with-description", minimumDescriptionLength: 1 }],
-				"@typescript-eslint/ban-tslint-comment": ["error"],
+				"@typescript-eslint/ban-tslint-comment": ["warn"],
 				// #regionend
 
 				// #region UNSAFE / ERROR PRONE
@@ -276,6 +276,7 @@ module.exports = {
 				"no-unused-expressions": "off",
 				"no-unused-vars": "off",
 				"no-use-before-define": "off",
+				"object-curly-spacing": "off",
 				quotes: "off",
 				"require-await": "off",
 				semi: "off",
@@ -316,7 +317,7 @@ module.exports = {
 				"@typescript-eslint/sort-type-union-intersection-members": "off", // often my ordering has some logic
 				"@typescript-eslint/strict-boolean-expressions": ["off", { allowNullableBoolean: true }], // useful but sometimes nags where imo it shouldn't
 				"@typescript-eslint/unbound-method": ["off", { ignoreStatic: true }], // giving weird errors
-				// #endregion
+				// #regionend
 			},
 		},
 	],

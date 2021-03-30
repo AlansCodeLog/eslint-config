@@ -73,7 +73,7 @@ module.exports = {
 				"arrow-body-style": "warn",
 				"arrow-parens": ["warn", "as-needed"],
 				"no-inner-declarations": ["warn", "both"],
-				// #endregion
+				// #regionend
 
 				// #region STYLE - OBJECTS / ARRAYS
 				"dot-location": ["warn", "property"],
