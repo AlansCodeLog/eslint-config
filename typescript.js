@@ -285,6 +285,7 @@ module.exports = {
 
 				// #region UNUSED
 				// kept for reference and also `show-unset` script
+				"@typescript-eslint/no-unsafe-argument": "off",
 				"@typescript-eslint/ban-ts-ignore": "off",
 				"@typescript-eslint/ban-types": "off",
 				"@typescript-eslint/camelcase": "off",

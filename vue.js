@@ -166,15 +166,19 @@ module.exports = {
 					message: "If you intend a prop for v-model, it should be 'modelValue' in Vue 3.",
 					suggest: "modelValue",
 				}],
-				"vue/no-constant-condition": ["warn"],
-				"vue/no-template-shadow": ["warn"],
-				"vue/require-default-prop": ["warn"],
-				"vue/require-explicit-emits": ["warn"],
-				"vue/require-prop-types": ["warn"],
-				"vue/no-multiple-slot-args": ["warn"],
+				"vue/no-constant-condition": "warn",
+				"vue/no-deprecated-v-is": "warn",
+				"vue/no-invalid-model-keys": "warn",
 				"vue/no-lone-template": ["warn", { ignoreAccessible: false }],
+				"vue/no-multiple-slot-args": "warn",
+				"vue/no-template-shadow": "warn",
+				"vue/no-this-in-before-route-enter": "warn",
+				"vue/require-default-prop": "warn",
+				"vue/require-emit-validator": "warn",
+				"vue/require-explicit-emits": "warn",
+				"vue/require-prop-types": "warn",
 				"vue/this-in-template": ["warn", "never"],
-				"vue/valid-next-tick": ["warn"],
+				"vue/valid-next-tick": "warn",
 				// #regionend
 
 
@@ -251,6 +255,10 @@ module.exports = {
 				"vue/v-on-function-call": "off",
 				"vue/valid-v-bind-sync": "off",
 				// #regionend
+
+				// #region UNUSED
+				"vue/no-unused-refs": "off",
+				// #endregion
 			},
 		},
 	],
