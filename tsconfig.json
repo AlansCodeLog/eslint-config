@@ -12,6 +12,7 @@
 	// the libs are explicitly specified because otherwise typescript includes the dom by default
 	"lib": [
 		"esnext",
+		"typescript"
 	],
 	"include": [
 		"src/**/*.ts",
