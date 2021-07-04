@@ -12,40 +12,53 @@ const forbidUnderscores = { leadingUnderscore: "forbid", trailingUnderscore: "fo
 const requireLeadingUnderscore = { leadingUnderscore: "require", trailingUnderscore: "allow" }
 /** Prevents underscore only identifiers from matching so they match the null rule instead and aren't checked */
 const fixExceptions = { filter: { regex: "^(_+?|_constructor|_mixin)$", match: false } }
+
+
+const baseOptions = {
+	parser: "@typescript-eslint/parser",
+	parserOptions: {
+		project: "./tsconfig.json",
+		sourceType: "module",
+	},
+	plugins: [
+		"@typescript-eslint",
+	],
+	settings: {
+		"import/parsers": {
+			"@typescript-eslint/parser": [".ts", ".tsx"],
+		},
+		"import/resolver": {
+			typescript: {
+				alwaysTryTypes: true,
+			},
+		},
+		jsdoc: {
+			mode: "jsdoc",
+			tagNamePreference: {
+				link: {
+					message: "@link cannot be understood by typescript/vscode yet",
+					replacement: "see",
+				},
+			},
+		},
+	},
+}
+
 module.exports = {
 	extends: [
 		"./js",
 	],
 	overrides: [
 		{
+			files: ["**/*.d.ts"],
+			...baseOptions,
+			rules: {
+				"spaced-comment": ["warn", "always", { markers: ["/"]}], // allow triple slash directives
+			},
+		},
+		{
 			files: ["**/*.ts"],
-			parser: "@typescript-eslint/parser",
-			parserOptions: {
-				project: "./tsconfig.json",
-				sourceType: "module",
-			},
-			plugins: [
-				"@typescript-eslint",
-			],
-			settings: {
-				"import/parsers": {
-					"@typescript-eslint/parser": [".ts", ".tsx"],
-				},
-				"import/resolver": {
-					typescript: {
-						alwaysTryTypes: true,
-					},
-				},
-				jsdoc: {
-					mode: "jsdoc",
-					tagNamePreference: {
-						link: {
-							message: "@link cannot be understood by typescript/vscode yet",
-							replacement: "see",
-						},
-					},
-				},
-			},
+			...baseOptions,
 			rules: {
 				...jsRules,
 				// #region JSDOC

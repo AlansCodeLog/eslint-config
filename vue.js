@@ -1,7 +1,7 @@
 /**
  * Just extending ts will only make the rules apply to ts files. We want them to also apply to vue files. This config will take care of disabling any rules that interfere.
  */
-const tsRules = require("./typescript").overrides[0].rules
+const tsRules = require("./typescript").overrides[1].rules
 
 
 module.exports = {
