@@ -6,11 +6,11 @@ const excludeExtends = ["./js", "./base", "./typescript", "./vue"]
 module.exports = {
 	plugins: [
 		...typescript.plugins,
-		...(vue.overrides[0].plugins ? vue.overrides[0].plugins : []),
+		...(vue.plugins ? vue.plugins : []),
 	],
 	extends: [
 		...typescript.extends,
-		...(vue.overrides[0].extends ? vue.overrides[0].extends : []),
+		...(vue.extends ? vue.extends : []),
 	].filter(entry => !excludeExtends.includes(entry)),
 	rules: {
 		...typescript.rules,

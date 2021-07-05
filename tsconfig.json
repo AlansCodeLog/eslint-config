@@ -23,6 +23,5 @@
 		"copy/**/*.js",
 		"*.js"
 	],
-	"exclude": [
-	]
+	"exclude": []
 }
