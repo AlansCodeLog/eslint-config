@@ -268,6 +268,7 @@ module.exports = {
 
 				// #region INTERFERE WITH TYPESCRIPT
 				"brace-style": "off",
+				camelCase: "off",
 				"comma-dangle": "off",
 				"comma-spacing": "off",
 				"dot-notation": "off",
