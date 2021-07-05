@@ -77,6 +77,7 @@ module.exports = {
 		"jsdoc/empty-tags": "off", // dangerous auto-fix
 		"jsdoc/implements-on-classes": "off",
 		"jsdoc/match-description": "off",
+		"jsdoc/match-name": "off",
 		"jsdoc/no-defaults": "off",
 		"jsdoc/no-missing-syntax": "off",
 		"jsdoc/no-restricted-syntax": "off",
