@@ -101,7 +101,7 @@ module.exports = {
 				"no-useless-rename": "warn",
 				"no-useless-return": "warn",
 				"no-var": "warn",
-				"no-void": "warn",
+				"no-void": ["warn", { allowAsStatement: true }],
 				"prefer-exponentiation-operator": "warn",
 				"prefer-const": ["warn", { ignoreReadBeforeAssign: false }],
 				"prefer-object-spread": "warn",
