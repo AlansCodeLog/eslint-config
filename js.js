@@ -201,6 +201,7 @@ module.exports = {
 				"no-unsafe-negation": "warn",
 				"no-unused-expressions": ["warn", { allowTernary: true }], // ⚠️
 				"no-unused-labels": "warn",
+				"no-unused-private-class-members": "warn",
 				"no-use-before-define": ["warn", { functions: false, classes: true, variables: true }], // ⚠️
 				"no-useless-catch": "warn",
 				"no-useless-escape": "warn",

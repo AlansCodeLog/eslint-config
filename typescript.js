@@ -139,6 +139,7 @@ module.exports = {
 				"@typescript-eslint/naming-convention": ["warn",
 					{ selector: ["default"], format: null, ...allowAnyUnderscores, filter: { ...fixExceptions.filter, match: true } },
 					{ selector: ["default"], format: ["strictCamelCase"], ...allowSingleUnderscores, ...fixExceptions },
+					{ selector: "default", modifiers: ["unused"], format: ["strictCamelCase", "UPPER_CASE"], ...requireLeadingUnderscore, ...fixExceptions },
 
 					{ selector: ["enumMember", "typeProperty"], format: ["strictCamelCase", "UPPER_CASE"], ...allowSingleUnderscores, ...fixExceptions },
 
@@ -246,7 +247,6 @@ module.exports = {
 				"@typescript-eslint/prefer-includes": "warn",
 				"@typescript-eslint/prefer-nullish-coalescing": ["warn", { ignoreConditionalTests: true, ignoreMixedLogicalExpressions: true }],
 				"@typescript-eslint/no-confusing-non-null-assertion": "off",
-				"@typescript-eslint/no-implicit-any-catch": ["warn", { allowExplicitAny: true }],
 				"@typescript-eslint/no-implied-eval": "warn", // ⭐
 				"@typescript-eslint/no-invalid-this": "warn", // ⭐
 				"@typescript-eslint/no-loop-func": "warn", // ⭐
