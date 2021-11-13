@@ -4,10 +4,10 @@
 	"description": "My eslint config.",
 	"main": ".eslintrc.js",
 	"scripts": {
-		"print": "npx eslint --print-config .eslintrc.js",
+		"print": "eslint --print-config .eslintrc.js",
 		"show-unset": "node tests/no_unset.js",
-		"lint:eslint": "npx eslint \"{src,tests,copy}/**/*.{js,ts}\" \"*.{js,ts}\" --max-warnings=0 --report-unused-disable-directives",
-		"lint:commits": "npx commitlint --from $(git rev-list HEAD --not --remotes | tail -1)^ --to HEAD --verbose",
+		"lint:eslint": "eslint \"{src,tests,copy}/**/*.{js,ts}\" \"*.{js,ts}\" --max-warnings=0 --report-unused-disable-directives",
+		"lint:commits": "commitlint --from $(git rev-list HEAD --not --remotes | tail -1)^ --to HEAD --verbose",
 		"test": "node tests/loads.js && npm run show-unset",
 		"postinstall": "node copy/postinstall.js",
 		"prepare": "husky install"
