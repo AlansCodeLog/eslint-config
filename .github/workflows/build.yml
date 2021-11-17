@@ -11,6 +11,8 @@ on:
     - cron:  '0 15 1 * *'
   push:
     branches: [ master ]
+  pull_request:
+    branches: [ master, alpha, beta ]
   repository_dispatch:
     types: [ build ]
     # to trigger: curl -v -H "Accept: application/vnd.github.everest-preview+json" -H "Authorization: token $GH_TOKEN" https://api.github.com/repos/alanscodelog/TOREPONAME/dispatches -d '{ "event_type": "build" }'
