@@ -5,56 +5,36 @@ My preferred base eslint configs along with an "install" script for quickly sett
 
 # Install
 
-Note: The last command is the install script and will overwrite `.eslintrc` if it exists.
 
-Without vue (just js + typescript):
+Add to package.json:
 
-```bash
-yarn add -D \
-@alanscodelog/eslint-config \
-eslint \
-typescript \
-@typescript-eslint/parser \
-@typescript-eslint/eslint-plugin \
-eslint-import-resolver-typescript \
-eslint-plugin-simple-import-sort \
-eslint-plugin-import \
-eslint-plugin-jsdoc \
-&& ./node_modules/@alanscodelog/eslint-config/install.sh \
+```json
+devDependencies: {
+	"@alanscodelog/eslint-config":"^3.0.0",
+   "eslint":"^8.2.0",
+	"eslint-plugin-simple-import-sort": "^7.0.0",
+   "eslint-plugin-import":"^2.25.3",
+	"eslint-plugin-jsdoc": "^37.0.3",
+	// for typescript support
+	"typescript": "^4.4.4",
+	"@typescript-eslint/parser": "^5.3.1",
+	"@typescript-eslint/eslint-plugin": "^5.3.1",
+	"eslint-import-resolver-typescript": "^2.5.0",
+	 // for vue support
+	"eslint-plugin-vue": "^8.0.3",
+	"@vue/eslint-config-typescript": "^9.0.1"
+}
+// note: js alone is untested
 ```
 
-With vue:
-
-<details>
-```bash
-yarn add -D \
-@alanscodelog/eslint-config \
-eslint \
-typescript \
-@typescript-eslint/parser \
-@typescript-eslint/eslint-plugin \
-eslint-import-resolver-typescript \
-eslint-plugin-simple-import-sort \
-eslint-plugin-import \
-eslint-plugin-jsdoc \
-eslint-plugin-vue \
-@vue/eslint-config-typescript \
-&& ./node_modules/@alanscodelog/eslint-config/install.sh \
 ```
-</details>
-
-Just js (untested):
-<details>
-```bash
-yarn add -D \
-@alanscodelog/eslint-config \
-eslint \
-eslint-plugin-simple-import-sort \
-eslint-plugin-import \
-eslint-plugin-jsdoc \
-&& ./node_modules/@alanscodelog/eslint-config/install.sh \
+npm install
 ```
-</details>
+
+Run the install script (this will overwrite `.eslintrc` and `test/.eslintrc` if it exists.)
+```bash
+./node_modules/@alanscodelog/eslint-config/install.sh
+```
 
 # Manual Setup
 
