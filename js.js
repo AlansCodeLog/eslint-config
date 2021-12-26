@@ -207,6 +207,7 @@ module.exports = {
 				"no-useless-escape": "warn",
 				"no-with": "warn",
 				"prefer-numeric-literals": "warn",
+				"prefer-object-has-own": "warn",
 				"prefer-promise-reject-errors": ["warn", { allowEmptyReject: true }],
 				radix: "warn",
 				"require-await": "warn", // ⚠️
