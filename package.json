@@ -17,36 +17,28 @@
 		"eslint-plugin-simple-import-sort": ">=7.0.0",
 		"eslint-plugin-import": ">=2.25.3",
 		"eslint-plugin-jsdoc": ">=37.0.3",
-
 		"typescript": ">=4.4.4",
 		"@typescript-eslint/parser": ">=5.3.1",
 		"@typescript-eslint/eslint-plugin": ">=5.3.1",
 		"eslint-import-resolver-typescript": ">=2.5.0",
-
 		"eslint-plugin-vue": ">=8.0.3",
 		"@vue/eslint-config-typescript": ">=9.0.1"
 	},
 	"devDependencies": {
 		"@types/node": "^16.11.7",
-		"@types/eslint": "^7.28.2",
-
-		"eslint":"^8.2.0",
+		"@types/eslint": "^8.2.1",
+		"eslint": "^8.2.0",
 		"eslint-plugin-simple-import-sort": "^7.0.0",
-		"eslint-plugin-import":"^2.25.3",
+		"eslint-plugin-import": "^2.25.3",
 		"eslint-plugin-jsdoc": "^37.0.3",
-
 		"typescript": "^4.4.4",
 		"@typescript-eslint/parser": "^5.3.1",
 		"@typescript-eslint/eslint-plugin": "^5.3.1",
 		"eslint-import-resolver-typescript": "^2.5.0",
-
 		"eslint-plugin-vue": "^8.0.3",
 		"@vue/eslint-config-typescript": "^9.0.1",
-
 		"@alanscodelog/tsconfigs": "^3.0.0",
-
 		"eslint-find-rules": "^4.0.0",
-
 		"semantic-release": "^18.0.0",
 		"@semantic-release/changelog": "^6.0.1",
 		"@semantic-release/commit-analyzer": "^9.0.1",
@@ -56,7 +48,7 @@
 		"conventional-changelog-conventionalcommits": "^4.6.1",
 		"@alanscodelog/semantic-release-config": "^2.0.0",
 		"@alanscodelog/commitlint-config": "^2.0.0",
-		"commitlint": "^14.1.0",
+		"commitlint": "^15.0.0",
 		"husky": "^7.0.4"
 	},
 	"author": "Alan <alanscodelog@gmail.com>",
@@ -73,9 +65,19 @@
 		"copy"
 	],
 	"eslintIgnore": [],
-	"release": { "extends": [ "@alanscodelog/semantic-release-config" ] },
-	"commitlint": { "extends": [ "@alanscodelog" ] },
-	"engines": { "node": ">=14.0.0" },
+	"release": {
+		"extends": [
+			"@alanscodelog/semantic-release-config"
+		]
+	},
+	"commitlint": {
+		"extends": [
+			"@alanscodelog"
+		]
+	},
+	"engines": {
+		"node": ">=14.0.0"
+	},
 	"@comments": {
 		"devDependencies": {
 			"@alanscodelog/tsconfigs": "For local testing against my typescript config."
