@@ -131,6 +131,7 @@ module.exports = {
 				"no-compare-neg-zero": "warn",
 				"no-cond-assign": "warn",
 				"no-const-assign": "warn",
+				"no-constant-binary-expression": "warn",
 				"no-constant-condition": "warn",
 				"no-constructor-return": "warn",
 				"no-control-regex": "warn",

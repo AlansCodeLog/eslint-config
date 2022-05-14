@@ -103,6 +103,7 @@ module.exports = {
 		"jsdoc/require-throws": "off",
 		"jsdoc/require-yields-check": "off",
 		"jsdoc/require-yields": "off",
+		"jsdoc/sort-tags": "off",
 		"jsdoc/tag-lines": "off",
 		"jsdoc/valid-types": "off",
 		// #regionend

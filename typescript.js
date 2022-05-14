@@ -121,7 +121,7 @@ module.exports = {
 				"@typescript-eslint/array-type": "warn",
 				"@typescript-eslint/consistent-indexed-object-style": ["warn", "record"],
 				"@typescript-eslint/consistent-type-assertions": "warn",
-				"@typescript-eslint/no-parameter-properties": "warn",
+				"@typescript-eslint/parameter-properties": ["warn", { prefer: "class-property" }],
 				"@typescript-eslint/prefer-function-type": "warn",
 				"@typescript-eslint/prefer-enum-initializers": "warn",
 				"@typescript-eslint/prefer-literal-enum-member": "off",
