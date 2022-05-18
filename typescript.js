@@ -88,7 +88,6 @@ module.exports = {
 				// #regionend
 
 				// #region IMPORTS
-				"@typescript-eslint/no-duplicate-imports": ["warn", { includeExports: false }], // ⭐
 				// #regionend
 
 				// #region STYLE - TYPESCRIPT SPECIFIC

@@ -64,10 +64,11 @@ module.exports = {
 					ignores: [],
 				}],
 				"vue/max-attributes-per-line": ["warn", {
-					singleline: 3,
+					singleline: {
+						max: 3,
+					},
 					multiline: {
 						max: 1,
-						allowFirstLine: false,
 					},
 				}],
 				"vue/multiline-html-element-content-newline": ["warn", {

@@ -142,7 +142,7 @@ module.exports = {
 		"import/no-anonymous-default-export": ["warn", { allowArray: false, allowArrowFunction: true, allowAnonymousClass: true, allowAnonymousFunction: true, allowCallExpression: true, allowLiteral: false, allowObject: true }],
 		"import/no-default-export": "warn",
 		"import/no-deprecated": "warn",
-		"import/no-duplicates": "warn",
+		"import/no-duplicates": ["warn", { considerQueryString: true }],
 		"import/no-extraneous-dependencies": ["warn", {
 			devDependencies: ["src/**/*"],
 			optionalDependencies: ["src/**/*"],
