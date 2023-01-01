@@ -14,17 +14,17 @@
 	},
 	"peerDependencies": {
 		"eslint": ">=8.19.0",
-		"eslint-plugin-simple-import-sort": ">=7.0.0",
+		"eslint-plugin-simple-import-sort": ">=8.0.0",
 		"eslint-plugin-import": ">=2.26.0",
-		"eslint-plugin-jsdoc": ">=39.3.3",
+		"eslint-plugin-jsdoc": ">=39.6.4",
 
-		"typescript": ">=4.7.4",
-		"@typescript-eslint/parser": ">=5.30.5",
-		"@typescript-eslint/eslint-plugin": ">=5.30.5",
-		"eslint-import-resolver-typescript": ">=3.2.4",
+		"typescript": ">=4.9.4",
+		"@typescript-eslint/parser": ">=5.47.1",
+		"@typescript-eslint/eslint-plugin": ">=5.47.1",
+		"eslint-import-resolver-typescript": ">=3.5.2",
 
-		"eslint-plugin-vue": ">=9.2.0",
-		"@vue/eslint-config-typescript": ">=11.0.0"
+		"eslint-plugin-vue": ">=9.8.0",
+		"@vue/eslint-config-typescript": ">=11.0.2"
 	},
 	"peerDependenciesMeta": {
 		"typescript": {"optional": true},
@@ -36,37 +36,38 @@
 		"@vue/eslint-config-typescript": {"optional": true}
 	},
 	"devDependencies": {
-		"@types/node": "^18.0.3",
-		"@types/eslint": "^8.4.5",
+		"@typescript-eslint/utils":"^5.47.1",
+		"@types/node": "^18.11.18",
+		"@types/eslint": "^8.4.10",
 
-		"eslint":"^8.19.0",
-		"eslint-plugin-simple-import-sort": "^7.0.0",
+		"eslint":"^8.31.0",
+		"eslint-plugin-simple-import-sort": "^8.0.0",
 		"eslint-plugin-import":"^2.26.0",
-		"eslint-plugin-jsdoc": "^39.3.3",
+		"eslint-plugin-jsdoc": "^39.6.4",
 
-		"typescript": "^4.7.4",
-		"@typescript-eslint/parser": "^5.30.5",
-		"@typescript-eslint/eslint-plugin": "^5.30.5",
-		"eslint-import-resolver-typescript": "^3.2.4",
+		"typescript": "^4.9.4",
+		"@typescript-eslint/parser": "^5.47.1",
+		"@typescript-eslint/eslint-plugin": "^5.47.1",
+		"eslint-import-resolver-typescript": "^3.5.2",
 
-		"eslint-plugin-vue": "^9.2.0",
-		"@vue/eslint-config-typescript": "^11.0.0",
+		"eslint-plugin-vue": "^9.8.0",
+		"@vue/eslint-config-typescript": "^11.0.2",
 
 		"@alanscodelog/tsconfigs": "^3.0.0",
 
 		"eslint-find-rules": "^4.1.0",
 
-		"semantic-release": "^19.0.3",
-		"@semantic-release/changelog": "^6.0.1",
+		"semantic-release": "^19.0.5",
+		"@semantic-release/changelog": "^6.0.2",
 		"@semantic-release/commit-analyzer": "^9.0.2",
-		"@semantic-release/github": "^8.0.4",
+		"@semantic-release/github": "^8.0.7",
 		"@semantic-release/npm": "^9.0.1",
 		"@semantic-release/release-notes-generator": "^10.0.3",
 		"conventional-changelog-conventionalcommits": "^5.0.0",
-		"@alanscodelog/semantic-release-config": "^2.0.0",
+		"@alanscodelog/semantic-release-config": "^2.0.1",
 		"@alanscodelog/commitlint-config": "^2.0.0",
-		"commitlint": "^17.0.3",
-		"husky": "^8.0.1"
+		"commitlint": "^17.3.0",
+		"husky": "^8.0.2"
 	},
 	"author": "Alan <alanscodelog@gmail.com>",
 	"repository": "https://github.com/alanscodelog/eslint-config",
