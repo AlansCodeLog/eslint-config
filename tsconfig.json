@@ -4,10 +4,7 @@
 	// https://github.com/AlansCodeLog/tsconfigs
 	"extends": "@alanscodelog/tsconfigs",
 	"compilerOptions": {
-		"baseUrl": ".",
-		"paths": {
-			"@/*": [ "src/*" ],
-		},
+		"baseUrl": "src"
 	},
 	// the libs are explicitly specified because otherwise typescript includes the dom by default
 	"lib": [

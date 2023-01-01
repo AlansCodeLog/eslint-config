@@ -19,6 +19,7 @@ module.exports = {
 				"constructor-super": "warn",
 				"grouped-accessor-pairs": "warn",
 				"no-dupe-class-members": "warn", // ⚠️
+				"no-empty-static-block": "warn",
 				// #regionend
 
 				// #region STYLE - WHITESPACE
@@ -67,6 +68,7 @@ module.exports = {
 				"quote-props": ["warn", "as-needed", { unnecessary: true }],
 				quotes: ["warn", "double", { avoidEscape: false, allowTemplateLiterals: true }], // ⚠️
 				semi: ["warn", "never"], // ⚠️
+				"logical-assignment-operators": ["error", "always", { enforceForIfStatements: true }],
 				// #regionend
 
 				// #region STYLE - FUNCTIONS
@@ -119,6 +121,7 @@ module.exports = {
 				// #regionend
 
 				// #region UNSAFE / ERROR PRONE
+				"no-new-native-nonconstructor": "warn",
 				"block-scoped-var": "warn",
 				"for-direction": "warn",
 				"getter-return": "warn",
@@ -198,8 +201,8 @@ module.exports = {
 				"no-unreachable-loop": "warn",
 				"no-unreachable": "warn",
 				"no-unsafe-finally": "warn",
-				"no-unsafe-optional-chaining": "warn",
 				"no-unsafe-negation": "warn",
+				"no-unsafe-optional-chaining": "warn",
 				"no-unused-expressions": ["warn", { allowTernary: true }], // ⚠️
 				"no-unused-labels": "warn",
 				"no-unused-private-class-members": "warn",
@@ -210,12 +213,12 @@ module.exports = {
 				"prefer-numeric-literals": "warn",
 				"prefer-object-has-own": "warn",
 				"prefer-promise-reject-errors": ["warn", { allowEmptyReject: true }],
-				radix: "warn",
 				"require-await": "warn", // ⚠️
 				"require-yield": "warn",
 				"use-isnan": "warn",
 				"valid-typeof": "warn",
 				"wrap-iife": ["warn", "inside", { functionPrototypeMethods: true }],
+				radix: "warn",
 				// #regionend
 
 				// #region UNUSED
@@ -225,7 +228,6 @@ module.exports = {
 				"capitalized-comments": "off",
 				"class-methods-use-this": "off",
 				"comma-style": "off",
-				complexity: "off",
 				"consistent-return": "off",
 				"consistent-this": "off",
 				"default-case": "off",
@@ -239,7 +241,6 @@ module.exports = {
 				"id-length": "off",
 				"id-match": "off",
 				"implicit-arrow-linebreak": ["off", "beside"], // too annoying in certain situations
-				indent: "off",
 				"init-declarations": "off",
 				"line-comment-position": "off",
 				"lines-around-comment": "off",
@@ -299,10 +300,12 @@ module.exports = {
 				"sort-imports": "off",
 				"sort-keys": "off",
 				"sort-vars": "off",
-				strict: "off",
 				"unicode-bom": "off",
 				"vars-on-top": "off",
 				"wrap-regex": "off",
+				complexity: "off",
+				indent: "off",
+				strict: "off",
 				// #regionend
 			},
 		},

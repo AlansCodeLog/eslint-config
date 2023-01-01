@@ -206,7 +206,7 @@ module.exports = {
 				// #region PREFERENCE - GENERAL
 				"@typescript-eslint/no-empty-function": "warn",
 				"@typescript-eslint/no-throw-literal": "warn", // ⭐
-				"@typescript-eslint/no-unused-vars": ["warn", { vars: "all", args: "after-used", ignoreRestSiblings: false }], // ⭐
+				"@typescript-eslint/no-unused-vars": ["warn", { vars: "all", args: "after-used", ignoreRestSiblings: false, argsIgnorePattern: "^_" }], // ⭐
 				"@typescript-eslint/no-var-requires": "warn",
 				"@typescript-eslint/prefer-for-of": "warn",
 				"@typescript-eslint/prefer-readonly": "warn",
@@ -227,7 +227,7 @@ module.exports = {
 				"@typescript-eslint/await-thenable": "warn",
 				"@typescript-eslint/class-literal-property-style": "warn",
 				"@typescript-eslint/default-param-last": "warn",
-				"@typescript-eslint/explicit-function-return-type": ["warn", { allowExpressions: true, allowTypedFunctionExpressions: true, allowHigherOrderFunctions: true }],
+				"@typescript-eslint/explicit-function-return-type": ["warn", { allowExpressions: true, allowTypedFunctionExpressions: true, allowHigherOrderFunctions: true, allowDirectConstAssertionInArrowFunctions: true, allowConciseArrowFunctionExpressionsStartingWithVoid: true }],
 				"@typescript-eslint/no-base-to-string": "warn",
 				"@typescript-eslint/no-empty-interface": ["warn", { allowSingleExtends: true }],
 				"@typescript-eslint/no-extra-non-null-assertion": "warn",

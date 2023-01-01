@@ -39,7 +39,7 @@ module.exports = {
 	settings: {
 		"import/ignore": ["node_modules"],
 		jsdoc: {
-			mode: "jsdoc",
+			mode: "typescript", // not working, has to be set in package?
 			maxLines: 0,
 		},
 	},
@@ -57,7 +57,7 @@ module.exports = {
 
 		"jsdoc/check-alignment": "warn",
 		// exceptions are for typedoc plugin
-		"jsdoc/check-tag-names": ["warn", { definedTags: ["packageDocumentation", "env", "internal"]}],
+		"jsdoc/check-tag-names": ["warn", { definedTags: ["packageDocumentation", "env"]}],
 		"jsdoc/multiline-blocks": "warn",
 		"jsdoc/newline-after-description": ["warn", "always"],
 		"jsdoc/no-bad-blocks": "warn",
@@ -105,6 +105,7 @@ module.exports = {
 		"jsdoc/require-yields": "off",
 		"jsdoc/sort-tags": "off",
 		"jsdoc/tag-lines": "off",
+		"jsdoc/text-escaping": "off", // weird issues with comments at start of files
 		"jsdoc/valid-types": "off",
 		// #regionend
 		// #regionend
@@ -128,56 +129,60 @@ module.exports = {
 					...aliases,
 				],
 				// Relative imports.
-				// These are technically banned by "no-restricted-imports" below.
 				["^\\../"],
 			],
 		}],
 		"import/default": "warn",
-		"import/dynamic-import-chunkname": "warn",
 		"import/export": "warn",
-		"import/named": "warn",
 		"import/namespace": "warn",
 		"import/newline-after-import": ["warn", { count: 2 }],
 		"import/no-absolute-path": "warn",
 		"import/no-anonymous-default-export": ["warn", { allowArray: false, allowArrowFunction: true, allowAnonymousClass: true, allowAnonymousFunction: true, allowCallExpression: true, allowLiteral: false, allowObject: true }],
-		"import/no-default-export": "warn",
 		"import/no-deprecated": "warn",
 		"import/no-duplicates": ["warn", { considerQueryString: true }],
 		"import/no-extraneous-dependencies": ["warn", {
-			devDependencies: ["src/**/*"],
-			optionalDependencies: ["src/**/*"],
-			peerDependencies: ["src/**/*"],
+			// confusing but if true or matches DOESN' enforce the rule
+			devDependencies: ["!src/**/*"],
+			optionalDependencies: true,
+			peerDependencies: true,
 		}],
 		"import/no-mutable-exports": "warn",
 		"import/no-named-as-default-member": "warn",
 		"import/no-named-as-default": "warn",
 		"import/no-named-default": "warn",
 		"import/no-namespace": "warn",
-		"import/no-useless-path-segments": ["warn", { noUselessIndex: true }],
+		"import/no-useless-path-segments": ["warn", {
+			noUselessIndex: false,
+		}],
 		"import/no-webpack-loader-syntax": "warn",
 		"no-duplicate-imports": ["warn", { includeExports: false }], // ⚠️ // #eslint
 		"no-restricted-imports": ["warn", { // #eslint
-			patterns: ["../*"],
-			paths: [
-				{ name: "fs", importNames: ["default"], message: `Please use \`import { promises as fs } from "fs"\` instead, otherwise disable this warning if sync fs functions are needed.` },
+			patterns: [
+				{
+					group: ["*/index.js", "!types/index.js"],
+					message: "Avoid importing from index files to avoid circular dependencies.",
+				},
 			],
 		}],
 
 		// #region UNUSED
-		"import/no-relative-packages": "off",
-		"import/no-import-module-exports": "off",
+		"import/dynamic-import-chunkname": "off",
 		"import/exports-last": "off",
 		"import/extensions": "off",
 		"import/first": "off",
 		"import/group-exports": "off",
 		"import/max-dependencies": "off",
+		"import/named": "off", // was being weird with star exports
 		"import/no-amd": "off",
 		"import/no-commonjs": "off",
 		"import/no-cycle": "off", // want but off because it complains when importing types and there's no way to whitelist them
+		"import/no-default-export": "off",
 		"import/no-dynamic-require": "off",
+		"import/no-import-module-exports": "off",
 		"import/no-internal-modules": "off",
 		"import/no-named-export": "off",
 		"import/no-nodejs-modules": "off",
+		"import/no-relative-packages": "off",
 		"import/no-relative-parent-imports": "off",
 		"import/no-restricted-paths": "off",
 		"import/no-self-import": "off",

@@ -34,7 +34,10 @@ module.exports = {
 				// #region NAMING
 				"vue/attribute-hyphenation": ["warn", "always"],
 				"vue/component-definition-name-casing": ["warn", "kebab-case"],
-				"vue/custom-event-name-casing": "warn",
+				"vue/custom-event-name-casing": ["warn", "camelCase", {
+					// ignore events with colons in the name
+					ignores: ["/^[a-z]+(?:-[a-z]+)*:[a-z]+(?:-[a-z]+)*$/u"],
+				}],
 				"vue/prop-name-casing": ["warn", "camelCase"],
 				"vue/v-bind-style": ["warn", "shorthand"],
 				"vue/v-on-event-hyphenation": ["warn", "always", { autofix: true }],
@@ -212,6 +215,7 @@ module.exports = {
 				"vue/keyword-spacing": "off",
 				"vue/match-component-file-name": "off",
 				"vue/max-len": "off",
+				"vue/multi-word-component-names": "off",
 				"vue/new-line-between-multi-line-property": "off",
 				"vue/no-bare-strings-in-template": "off",
 				"vue/no-boolean-default": "off",
