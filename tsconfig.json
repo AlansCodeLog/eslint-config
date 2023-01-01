@@ -1,7 +1,7 @@
 // https://www.typescriptlang.org/tsconfig/
 {
 	// ./node_modules/@alanscodelog/tsconfigs/tsconfig.json
-	// https://github.com/AlansCodeLog/my-tsconfigs
+	// https://github.com/AlansCodeLog/tsconfigs
 	"extends": "@alanscodelog/tsconfigs",
 	"compilerOptions": {
 		"baseUrl": ".",

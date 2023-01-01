@@ -69,7 +69,7 @@
 		"husky": "^8.0.1"
 	},
 	"author": "Alan <alanscodelog@gmail.com>",
-	"repository": "https://github.com/alanscodelog/my-eslint-config",
+	"repository": "https://github.com/alanscodelog/eslint-config",
 	"license": "MIT",
 	"files": [
 		".eslintrc.js",

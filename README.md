@@ -1,5 +1,5 @@
-![Build](https://github.com/alanscodelog/my-eslint-config/workflows/Build/badge.svg)
-[![Release](https://github.com/alanscodelog/my-eslint-config/workflows/Release/badge.svg)](https://www.npmjs.com/package/@alanscodelog/eslint-config)
+![Build](https://github.com/alanscodelog/eslint-config/workflows/Build/badge.svg)
+[![Release](https://github.com/alanscodelog/eslint-config/workflows/Release/badge.svg)](https://www.npmjs.com/package/@alanscodelog/eslint-config)
 
 My preferred base eslint configs along with an "install" script for quickly setting up the configs to extend from this one.
 
@@ -42,8 +42,8 @@ Run the install script (this will overwrite `.eslintrc` and `test/.eslintrc` if 
 cp ./node_modules/@alanscodelog/eslint-config/copy/root.eslintrc.js ./.eslintrc.js
 cp ./node_modules/@alanscodelog/eslint-config/copy/tests.eslintrc.js ./tests/.eslintrc.js
 ```
-or copy [this](https://github.com/AlansCodeLog/my-eslint-config/blob/master/copy/root.eslintrc.js) to `.eslintrc.js`.
-and [this](https://github.com/AlansCodeLog/my-eslint-config/blob/master/copy/tests.eslintrc.js) to a `.eslintrc.js` in your tests directory.
+or copy [this](https://github.com/AlansCodeLog/eslint-config/blob/master/copy/root.eslintrc.js) to `.eslintrc.js`.
+and [this](https://github.com/AlansCodeLog/eslint-config/blob/master/copy/tests.eslintrc.js) to a `.eslintrc.js` in your tests directory.
 
 Search for `// TOCONFIGURE` comments to find the places `.eslintrc.js` should be manually configured before using.
 
