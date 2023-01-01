@@ -8,7 +8,7 @@ on:
     branches: [ master, alpha, beta ]
   repository_dispatch:
     types: [ release ]
-    # to trigger: curl -v -H "Accept: application/vnd.github.everest-preview+json" -H "Authorization: token $GH_TOKEN" https://api.github.com/repos/alanscodelog/my-eslint-config/dispatches -d '{ "event_type": "release" }'
+    # to trigger: curl -v -H "Accept: application/vnd.github.everest-preview+json" -H "Authorization: token $GH_TOKEN" https://api.github.com/repos/alanscodelog/eslint-config/dispatches -d '{ "event_type": "release" }'
 
 jobs:
   release:
