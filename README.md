@@ -55,8 +55,8 @@ Add linting script to `package.json`:
 ```json
 	// bin only if it has scripts, not for "dist" folder of cli
 	// double quotes escaped to avoid shell expanding globs which causes problems
-	// *.{js,ts} so configs at root will be linted
-	"lint:eslint":"npx eslint \"{src,bin,tests}/**/*.{js,ts}\" \"*.{js,ts}\" --max-warnings=0 --report-unused-disable-directives"
+	// *.{cjs,js,ts} so configs at root will be linted
+	"lint:eslint": "eslint \"{src,tests,bin}/**/*.{cjs,js,ts}\" \"*.{cjs,js,ts}\" --max-warnings=0 --report-unused-disable-directives",
 	// additionally, other directories should be ignored properly in the eslintrc so that vscode won't try to lint the files when opening them (except node_modules, that already seems to be ignored)
 ```
 
