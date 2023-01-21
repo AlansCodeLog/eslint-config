@@ -39,17 +39,11 @@ Run the install script (this will overwrite `.eslintrc` and `test/.eslintrc` if 
 # Manual Setup
 
 ```bash
-cp ./node_modules/@alanscodelog/eslint-config/copy/root.eslintrc.js ./.eslintrc.js
-cp ./node_modules/@alanscodelog/eslint-config/copy/tests.eslintrc.js ./tests/.eslintrc.js
+cp ./node_modules/@alanscodelog/eslint-config/copy/root.eslintrc.cjs ./.eslintrc.cjs
+cp ./node_modules/@alanscodelog/eslint-config/copy/tests.eslintrc.cjs ./tests/.eslintrc.cjs
 ```
-or copy [this](https://github.com/AlansCodeLog/eslint-config/blob/master/copy/root.eslintrc.js) to `.eslintrc.js`.
-and [this](https://github.com/AlansCodeLog/eslint-config/blob/master/copy/tests.eslintrc.js) to a `.eslintrc.js` in your tests directory.
-
-Search for `// TOCONFIGURE` comments to find the places `.eslintrc.js` should be manually configured before using.
-
-```bash
-grep "// TOCONFIGURE" .eslintrc.js tests/.eslintrc.js -H -n - A1 --color
-```
+or copy [this](https://github.com/AlansCodeLog/eslint-config/blob/master/copy/root.eslintrc.cjs) to `.eslintrc.js`.
+and [this](https://github.com/AlansCodeLog/eslint-config/blob/master/copy/root.eslintrc.cjs) to a `.eslintrc.js` in your tests directory.
 
 Add linting script to `package.json`:
 ```json

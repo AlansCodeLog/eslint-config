@@ -1,6 +1,6 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-echo "Runnin pre-commit hook"
+echo "Running pre-commit hook"
 
 npm run test
