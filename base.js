@@ -166,6 +166,7 @@ module.exports = {
 		}],
 
 		// #region UNUSED
+		"import/consistent-type-specifier-style": "off", // done by typescript
 		"import/dynamic-import-chunkname": "off",
 		"import/exports-last": "off",
 		"import/extensions": "off",
@@ -178,6 +179,7 @@ module.exports = {
 		"import/no-cycle": "off", // want but off because it complains when importing types and there's no way to whitelist them
 		"import/no-default-export": "off",
 		"import/no-dynamic-require": "off",
+		"import/no-empty-named-blocks": "warn",
 		"import/no-import-module-exports": "off",
 		"import/no-internal-modules": "off",
 		"import/no-named-export": "off",

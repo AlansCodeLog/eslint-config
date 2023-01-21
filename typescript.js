@@ -262,6 +262,7 @@ module.exports = {
 				"@typescript-eslint/restrict-template-expressions": ["warn", { allowNumber: true, allowBoolean: true, allowAny: true }],
 				"@typescript-eslint/return-await": "warn",
 				"@typescript-eslint/switch-exhaustiveness-check": "warn",
+
 				// #regionend
 
 				// #region INTERFERE WITH TYPESCRIPT
@@ -302,7 +303,7 @@ module.exports = {
 				"@typescript-eslint/camelcase": "off",
 				"@typescript-eslint/class-name-casing": "off",
 				"@typescript-eslint/consistent-type-definitions": "off",
-				"@typescript-eslint/consistent-type-imports": "off", // not needed
+				"@typescript-eslint/consistent-type-imports": ["warn", { prefer: "type-imports", fixStyle: "inline-type-imports" }],
 				"@typescript-eslint/explicit-module-boundary-types": "off", // not needed, explicit-function-return-type is on
 				"@typescript-eslint/init-declarations": "off",
 				"@typescript-eslint/interface-name-prefix": "off",
