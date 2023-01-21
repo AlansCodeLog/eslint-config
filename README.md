@@ -9,20 +9,22 @@ My preferred base eslint configs along with an "install" script for quickly sett
 Add to package.json:
 
 ```json
-devDependencies: {
-	"@alanscodelog/eslint-config":"^3.0.0",
-   "eslint":"^8.2.0",
-	"eslint-plugin-simple-import-sort": "^7.0.0",
-   "eslint-plugin-import":"^2.25.3",
-	"eslint-plugin-jsdoc": "^37.0.3",
-	// for typescript support
-	"typescript": "^4.4.4",
-	"@typescript-eslint/parser": "^5.3.1",
-	"@typescript-eslint/eslint-plugin": "^5.3.1",
-	"eslint-import-resolver-typescript": "^2.5.0",
-	 // for vue support
-	"eslint-plugin-vue": "^8.0.3",
-	"@vue/eslint-config-typescript": "^9.0.1"
+{
+	"devDependencies": {
+		"@alanscodelog/eslint-config":"^3.0.0",
+		"eslint":"^8.2.0",
+		"eslint-plugin-simple-import-sort": "^7.0.0",
+		"eslint-plugin-import":"^2.25.3",
+		"eslint-plugin-jsdoc": "^37.0.3",
+		// for typescript support
+		"typescript": "^4.4.4",
+		"@typescript-eslint/parser": "^5.3.1",
+		"@typescript-eslint/eslint-plugin": "^5.3.1",
+		"eslint-import-resolver-typescript": "^2.5.0",
+		// for vue support
+		"eslint-plugin-vue": "^8.0.3",
+		"@vue/eslint-config-typescript": "^9.0.1"
+	}
 }
 // note: js alone is untested
 ```
@@ -47,11 +49,15 @@ and [this](https://github.com/AlansCodeLog/eslint-config/blob/master/copy/root.e
 
 Add linting script to `package.json`:
 ```json
-	// bin only if it has scripts, not for "dist" folder of cli
-	// double quotes escaped to avoid shell expanding globs which causes problems
-	// *.{cjs,js,ts} so configs at root will be linted
-	"lint:eslint": "eslint \"{src,tests,bin}/**/*.{cjs,js,ts}\" \"*.{cjs,js,ts}\" --max-warnings=0 --report-unused-disable-directives",
-	// additionally, other directories should be ignored properly in the eslintrc so that vscode won't try to lint the files when opening them (except node_modules, that already seems to be ignored)
+{
+	"scripts": {
+		// bin only if it has scripts, not for "dist" folder of cli
+		// double quotes escaped to avoid shell expanding globs which causes problems
+		// *.{cjs,js,ts} so configs at root will be linted
+		"lint:eslint": "eslint \"{src,tests,bin}/**/*.{cjs,js,ts}\" \"*.{cjs,js,ts}\" --max-warnings=0 --report-unused-disable-directives",
+		// additionally, other directories should be ignored properly in the eslintrc so that vscode won't try to lint the files when opening them (except node_modules, that already seems to be ignored)
+	}
+}
 ```
 
 
