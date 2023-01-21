@@ -258,7 +258,6 @@ module.exports = {
 				"@typescript-eslint/prefer-string-starts-ends-with": "warn",
 				"@typescript-eslint/prefer-ts-expect-error": "warn",
 				"@typescript-eslint/promise-function-async": "warn",
-				"@typescript-eslint/require-await": "warn", // ⭐
 				"@typescript-eslint/restrict-plus-operands": ["warn", { checkCompoundAssignments: true }],
 				"@typescript-eslint/restrict-template-expressions": ["warn", { allowNumber: true, allowBoolean: true, allowAny: true }],
 				"@typescript-eslint/return-await": "warn",
@@ -328,6 +327,7 @@ module.exports = {
 				"@typescript-eslint/prefer-readonly-parameter-types": "off", // getting weird false positives
 				"@typescript-eslint/prefer-regexp-exec": "off",
 				"@typescript-eslint/require-array-sort-compare": "off",
+				"@typescript-eslint/require-await": "off", // interferes with promise-function-async
 				"@typescript-eslint/sort-type-union-intersection-members": "off", // often my ordering has some logic
 				"@typescript-eslint/strict-boolean-expressions": ["off", { allowNullableBoolean: true }], // useful but sometimes nags where imo it shouldn't
 				"@typescript-eslint/unbound-method": ["off", { ignoreStatic: true }], // giving weird errors
