@@ -121,7 +121,6 @@ module.exports = {
 				"@typescript-eslint/consistent-indexed-object-style": ["warn", "record"],
 				"@typescript-eslint/consistent-type-assertions": "warn",
 				"@typescript-eslint/parameter-properties": ["warn", { prefer: "class-property" }],
-				"@typescript-eslint/prefer-function-type": "warn",
 				"@typescript-eslint/prefer-enum-initializers": "warn",
 				"@typescript-eslint/prefer-literal-enum-member": "off",
 				"@typescript-eslint/no-unnecessary-type-constraint": "warn",
@@ -325,6 +324,7 @@ module.exports = {
 				"@typescript-eslint/no-unsafe-member-access": "off",
 				"@typescript-eslint/no-unsafe-return": "off",
 				"@typescript-eslint/no-useless-constructor": "off",
+				"@typescript-eslint/prefer-function-type": "off",
 				"@typescript-eslint/prefer-readonly-parameter-types": "off", // getting weird false positives
 				"@typescript-eslint/prefer-regexp-exec": "off",
 				"@typescript-eslint/require-array-sort-compare": "off",
