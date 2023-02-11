@@ -213,7 +213,6 @@ module.exports = {
 				"prefer-numeric-literals": "warn",
 				"prefer-object-has-own": "warn",
 				"prefer-promise-reject-errors": ["warn", { allowEmptyReject: true }],
-				"require-await": "warn", // ⚠️
 				"require-yield": "warn",
 				"use-isnan": "warn",
 				"valid-typeof": "warn",
@@ -294,6 +293,7 @@ module.exports = {
 				"prefer-arrow-callback": "off",
 				"prefer-destructuring": "off",
 				"prefer-named-capture-group": "off",
+				"require-await": "off", // ⚠️
 				"require-atomic-updates": "off",
 				"require-unicode-regexp": "off",
 				"semi-style": "off",
