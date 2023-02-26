@@ -150,7 +150,6 @@ module.exports = {
 		"import/no-named-as-default-member": "warn",
 		"import/no-named-as-default": "warn",
 		"import/no-named-default": "warn",
-		"import/no-namespace": "warn",
 		"import/no-useless-path-segments": ["warn", {
 			noUselessIndex: false,
 		}],
@@ -166,6 +165,7 @@ module.exports = {
 		}],
 
 		// #region UNUSED
+		"import/no-namespace": "off", // never do it unless necessary
 		"import/consistent-type-specifier-style": "off", // done by typescript
 		"import/dynamic-import-chunkname": "off",
 		"import/exports-last": "off",
