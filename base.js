@@ -59,12 +59,16 @@ module.exports = {
 		// exceptions are for typedoc plugin
 		"jsdoc/check-tag-names": ["warn", { definedTags: ["packageDocumentation", "env"]}],
 		"jsdoc/multiline-blocks": "warn",
-		"jsdoc/newline-after-description": ["warn", "always"],
+		"jsdoc/tag-lines": ["error", "any", { startLines: 1 }],
 		"jsdoc/no-bad-blocks": "warn",
 		"jsdoc/no-multi-asterisks": "warn",
 		"jsdoc/require-asterisk-prefix": ["warn", "always"],
 		"jsdoc/require-hyphen-before-param-description": ["warn", "never"],
+		"jsdoc/no-blank-blocks": "warn",
 		// #region disabled
+		"jsdoc/imports-as-dependencies": "off", // can't find what this is
+		"jsdoc/informative-docs": "off",
+		"jsdoc/no-blank-block-descriptions": "off",
 		"jsdoc/check-access": "off",
 		"jsdoc/check-examples": "off",
 		"jsdoc/check-indentation": "off",

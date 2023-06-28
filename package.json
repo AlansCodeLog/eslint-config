@@ -13,61 +13,64 @@
 		"prepare": "husky install"
 	},
 	"peerDependencies": {
+		"@typescript-eslint/eslint-plugin": ">=5.47.1",
+		"@typescript-eslint/parser": ">=5.47.1",
+		"@vue/eslint-config-typescript": ">=11.0.2",
 		"eslint": ">=8.19.0",
-		"eslint-plugin-simple-import-sort": ">=8.0.0",
+		"eslint-import-resolver-typescript": ">=3.5.2",
 		"eslint-plugin-import": ">=2.27.5",
 		"eslint-plugin-jsdoc": ">=39.6.4",
-
-		"typescript": ">=4.9.4",
-		"@typescript-eslint/parser": ">=5.47.1",
-		"@typescript-eslint/eslint-plugin": ">=5.47.1",
-		"eslint-import-resolver-typescript": ">=3.5.2",
-
+		"eslint-plugin-simple-import-sort": ">=8.0.0",
 		"eslint-plugin-vue": ">=9.8.0",
-		"@vue/eslint-config-typescript": ">=11.0.2"
+		"typescript": ">=4.9.4"
 	},
 	"peerDependenciesMeta": {
-		"typescript": {"optional": true},
-		"@typescript-eslint/parser": {"optional": true},
-		"@typescript-eslint/eslint-plugin": {"optional": true},
-		"eslint-import-resolver-typescript": {"optional": true},
-
-		"eslint-plugin-vue": {"optional": true},
-		"@vue/eslint-config-typescript": {"optional": true}
+		"typescript": {
+			"optional": true
+		},
+		"@typescript-eslint/parser": {
+			"optional": true
+		},
+		"@typescript-eslint/eslint-plugin": {
+			"optional": true
+		},
+		"eslint-import-resolver-typescript": {
+			"optional": true
+		},
+		"eslint-plugin-vue": {
+			"optional": true
+		},
+		"@vue/eslint-config-typescript": {
+			"optional": true
+		}
 	},
 	"devDependencies": {
-		"@typescript-eslint/utils":"^5.48.2",
-		"@types/node": "^18.11.18",
-		"@types/eslint": "^8.4.10",
-
-		"eslint":"^8.32.0",
-		"eslint-plugin-simple-import-sort": "^9.0.0",
-		"eslint-plugin-import":"^2.27.5",
-		"eslint-plugin-jsdoc": "^39.6.7",
-
-		"typescript": "^4.9.4",
-		"@typescript-eslint/parser": "^5.48.2",
-		"@typescript-eslint/eslint-plugin": "^5.48.2",
-		"eslint-import-resolver-typescript": "^3.5.3",
-
-		"eslint-plugin-vue": "^9.9.0",
-		"@vue/eslint-config-typescript": "^11.0.2",
-
-		"@alanscodelog/tsconfigs": "^3.1.3",
-
-		"eslint-find-rules": "^4.1.0",
-
-		"semantic-release": "^20.0.2",
-		"@semantic-release/changelog": "^6.0.2",
-		"@semantic-release/commit-analyzer": "^9.0.2",
-		"@semantic-release/github": "^8.0.7",
-		"@semantic-release/npm": "^9.0.2",
-		"@semantic-release/release-notes-generator": "^10.0.3",
-		"conventional-changelog-conventionalcommits": "^5.0.0",
-		"@alanscodelog/semantic-release-config": "^2.0.1",
 		"@alanscodelog/commitlint-config": "^2.0.0",
-		"commitlint": "^17.4.2",
-		"husky": "^8.0.3"
+		"@alanscodelog/semantic-release-config": "^2.0.1",
+		"@alanscodelog/tsconfigs": "^3.1.3",
+		"@semantic-release/changelog": "^6.0.3",
+		"@semantic-release/commit-analyzer": "^10.0.1",
+		"@semantic-release/github": "^9.0.3",
+		"@semantic-release/npm": "^10.0.4",
+		"@semantic-release/release-notes-generator": "^11.0.3",
+		"@types/eslint": "^8.40.2",
+		"@types/node": "^20.3.2",
+		"@typescript-eslint/eslint-plugin": "^5.60.1",
+		"@typescript-eslint/parser": "^5.60.1",
+		"@typescript-eslint/utils": "^5.60.1",
+		"@vue/eslint-config-typescript": "^11.0.3",
+		"commitlint": "^17.6.6",
+		"conventional-changelog-conventionalcommits": "^6.1.0",
+		"eslint": "^8.43.0",
+		"eslint-find-rules": "^4.1.0",
+		"eslint-import-resolver-typescript": "^3.5.5",
+		"eslint-plugin-import": "^2.27.5",
+		"eslint-plugin-jsdoc": "^46.4.1",
+		"eslint-plugin-simple-import-sort": "^10.0.0",
+		"eslint-plugin-vue": "^9.15.1",
+		"husky": "^8.0.3",
+		"semantic-release": "^21.0.6",
+		"typescript": "^5.1.6"
 	},
 	"author": "Alan <alanscodelog@gmail.com>",
 	"repository": "https://github.com/alanscodelog/eslint-config",
@@ -83,9 +86,19 @@
 		"copy"
 	],
 	"eslintIgnore": [],
-	"release": { "extends": [ "@alanscodelog/semantic-release-config" ] },
-	"commitlint": { "extends": [ "@alanscodelog" ] },
-	"engines": { "node": ">=14.0.0" },
+	"release": {
+		"extends": [
+			"@alanscodelog/semantic-release-config"
+		]
+	},
+	"commitlint": {
+		"extends": [
+			"@alanscodelog"
+		]
+	},
+	"engines": {
+		"node": ">=14.0.0"
+	},
 	"@comments": {
 		"devDependencies": {
 			"@alanscodelog/tsconfigs": "For local testing against my typescript config."
