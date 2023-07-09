@@ -128,7 +128,7 @@ module.exports = {
 				// #regionend
 
 				// #region STYLE - CLASS RELATED
-				"@typescript-eslint/lines-between-class-members": ["warn", { exceptAfterOverload: false }],
+				"@typescript-eslint/lines-between-class-members": ["warn", "always", { exceptAfterOverload: false }],
 
 				"@typescript-eslint/no-dupe-class-members": "warn", // ⭐
 				// #regionend
@@ -257,7 +257,7 @@ module.exports = {
 				"@typescript-eslint/prefer-string-starts-ends-with": "warn",
 				"@typescript-eslint/prefer-ts-expect-error": "warn",
 				"@typescript-eslint/promise-function-async": "warn",
-				"@typescript-eslint/restrict-plus-operands": ["warn", { checkCompoundAssignments: true }],
+				"@typescript-eslint/restrict-plus-operands": ["warn"],
 				"@typescript-eslint/restrict-template-expressions": ["warn", { allowNumber: true, allowBoolean: true, allowAny: true }],
 				"@typescript-eslint/return-await": "warn",
 				"@typescript-eslint/switch-exhaustiveness-check": "warn",
@@ -272,6 +272,7 @@ module.exports = {
 				"dot-notation": "off",
 				"func-call-spacing": "off",
 				"keyword-spacing": "off",
+				"lines-between-class-members": "off",
 				"no-duplicate-imports": "off",
 				"no-dupe-class-members": "off",
 				"no-extra-semi": "off",
