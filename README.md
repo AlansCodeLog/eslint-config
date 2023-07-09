@@ -8,7 +8,7 @@ My preferred base eslint configs along with an "install" script for quickly sett
 
 Add to package.json:
 
-```json
+```jsonc
 {
 	"devDependencies": {
 		"@alanscodelog/eslint-config":"^3.0.0",
@@ -48,7 +48,7 @@ or copy [this](https://github.com/AlansCodeLog/eslint-config/blob/master/copy/ro
 and [this](https://github.com/AlansCodeLog/eslint-config/blob/master/copy/root.eslintrc.cjs) to a `.eslintrc.js` in your tests directory.
 
 Add linting script to `package.json`:
-```json
+```jsonc
 {
 	"scripts": {
 		// bin only if it has scripts, not for "dist" folder of cli
