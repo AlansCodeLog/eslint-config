@@ -159,7 +159,7 @@ module.exports = {
 		}],
 		"import/no-webpack-loader-syntax": "warn",
 		"no-duplicate-imports": ["warn", { includeExports: false }], // ⚠️ // #eslint
-		"no-restricted-imports": ["warn", { // #eslint
+		"no-restricted-imports": ["warn", {
 			patterns: [
 				{
 					group: ["*/index.js", "!types/index.js"],
