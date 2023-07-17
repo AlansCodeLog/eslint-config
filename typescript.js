@@ -214,7 +214,7 @@ module.exports = {
 				// #region PREFERENCE - TYPESCRIPT SPECIFIC
 				"@typescript-eslint/adjacent-overload-signatures": "warn",
 				"@typescript-eslint/no-namespace": "warn",
-				"@typescript-eslint/no-unnecessary-type-assertion": "warn",
+				// "@typescript-eslint/no-unnecessary-type-assertion": "warn",
 				"@typescript-eslint/prefer-namespace-keyword": "warn",
 				"@typescript-eslint/triple-slash-reference": "warn",
 				"@typescript-eslint/unified-signatures": "warn",
@@ -250,6 +250,15 @@ module.exports = {
 				"@typescript-eslint/no-loop-func": "warn", // ⭐
 				"@typescript-eslint/no-loss-of-precision": "warn", // ⭐
 				"@typescript-eslint/no-redeclare": ["warn", { ignoreDeclarationMerge: true }], // ⭐
+				"@typescript-eslint/no-restricted-imports": ["warn", {
+					patterns: [
+						{
+							group: ["*/index.js", "!types/index.js"],
+							message: "Avoid importing from index files to avoid circular dependencies.",
+							allowTypeImports: true,
+						},
+					],
+				}],
 				"@typescript-eslint/no-shadow": ["warn", { ignoreTypeValueShadow: true, ignoreFunctionTypeParameterNameValueShadow: true }], // ⭐
 				"@typescript-eslint/no-unused-expressions": ["warn", { allowTernary: true }], // ⭐
 				"@typescript-eslint/prefer-optional-chain": "warn",
@@ -262,9 +271,11 @@ module.exports = {
 				"@typescript-eslint/return-await": "warn",
 				"@typescript-eslint/switch-exhaustiveness-check": "warn",
 
+
 				// #regionend
 
 				// #region INTERFERE WITH TYPESCRIPT
+				"no-restricted-imports": "off",
 				"brace-style": "off",
 				camelCase: "off",
 				"comma-dangle": "off",
