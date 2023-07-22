@@ -108,7 +108,6 @@ module.exports = {
 		"jsdoc/require-yields-check": "off",
 		"jsdoc/require-yields": "off",
 		"jsdoc/sort-tags": "off",
-		"jsdoc/tag-lines": "off",
 		"jsdoc/text-escaping": "off", // weird issues with comments at start of files
 		"jsdoc/valid-types": "off",
 		// #regionend
