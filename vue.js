@@ -28,6 +28,10 @@ module.exports = {
 				...tsRules,
 				// #region INTERFERE
 				"@typescript-eslint/typedef": "off",
+				// very annoying when defining emits
+				// also I would never probably never an overloaded function like this, let alone in a vue file
+				// #future turn off complete?
+				"@typescript-eslint/unified-signatures": "off",
 				"import/no-default-export": ["off"],
 				// #regionend
 
