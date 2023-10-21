@@ -80,7 +80,7 @@ module.exports = {
 				// #region STYLE - OBJECTS / ARRAYS
 				"dot-location": ["warn", "property"],
 				"dot-notation": "warn", // ⚠️
-				"no-new-object": "warn",
+				"no-object-constructor": "warn",
 				"object-shorthand": "warn",
 				curly: ["warn", "multi-line"],
 				// #regionend
@@ -266,7 +266,7 @@ module.exports = {
 				"no-implicit-coercion": "off",
 				"no-inline-comments": "off",
 				"no-lonely-if": "off",
-				"no-magic-numbers": ["off", { ignoreArrayIndexes: true, detectObjects: true, ignore: [1]}],
+				"no-magic-numbers": ["off", { ignoreArrayIndexes: true, detectObjects: true, ignore: [1] }],
 				"no-multi-assign": "warn",
 				"no-multi-str": "off",
 				"no-negated-condition": "off",
