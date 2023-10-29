@@ -217,7 +217,6 @@ module.exports = {
 				// "@typescript-eslint/no-unnecessary-type-assertion": "warn",
 				"@typescript-eslint/prefer-namespace-keyword": "warn",
 				"@typescript-eslint/triple-slash-reference": "warn",
-				"@typescript-eslint/unified-signatures": "warn",
 				"@typescript-eslint/ban-ts-comment": ["warn", { "ts-expect-error": "allow-with-description", "ts-nocheck": "allow-with-description", minimumDescriptionLength: 1 }],
 				"@typescript-eslint/ban-tslint-comment": ["warn"],
 				// #regionend
@@ -344,6 +343,7 @@ module.exports = {
 				"@typescript-eslint/sort-type-union-intersection-members": "off", // often my ordering has some logic
 				"@typescript-eslint/strict-boolean-expressions": ["off", { allowNullableBoolean: true }], // useful but sometimes nags where imo it shouldn't
 				"@typescript-eslint/unbound-method": ["off", { ignoreStatic: true }], // giving weird errors
+				"@typescript-eslint/unified-signatures": "off", // annoying in certain situations
 				// #regionend
 			},
 		},
