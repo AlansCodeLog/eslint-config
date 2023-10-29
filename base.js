@@ -5,7 +5,6 @@ const path = require("path")
 const aliases = []
 if (fs.existsSync("./tsconfig.json")) {
 	try {
-		// eslint-disable-next-line import/no-extraneous-dependencies
 		const tsc = require("typescript")
 		const tsconfig = tsc.readConfigFile("tsconfig.json", tsc.sys.readFile)
 		const compilerOptions = tsconfig.config.compilerOptions
