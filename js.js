@@ -266,7 +266,7 @@ module.exports = {
 				"no-implicit-coercion": "off",
 				"no-inline-comments": "off",
 				"no-lonely-if": "off",
-				"no-magic-numbers": ["off", { ignoreArrayIndexes: true, detectObjects: true, ignore: [1] }],
+				"no-magic-numbers": ["off", { ignoreArrayIndexes: true, detectObjects: true, ignore: [1]}],
 				"no-multi-assign": "warn",
 				"no-multi-str": "off",
 				"no-negated-condition": "off",
