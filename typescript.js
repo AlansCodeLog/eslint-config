@@ -107,16 +107,6 @@ module.exports = {
 						requireLast: false,
 					},
 				}],
-				"@typescript-eslint/typedef": ["warn", {
-					arrowParameter: false,
-					arrayDestructuring: false,
-					objectDestructuring: false,
-					variableDeclaration: false,
-					variableDeclarationIgnoreFunction: false,
-					memberVariableDeclaration: true,
-					parameter: true,
-					propertyDeclaration: true,
-				}],
 				"@typescript-eslint/array-type": "warn",
 				"@typescript-eslint/consistent-indexed-object-style": ["warn", "record"],
 				"@typescript-eslint/consistent-type-assertions": "warn",
@@ -342,6 +332,7 @@ module.exports = {
 				"@typescript-eslint/require-await": "off", // interferes with promise-function-async
 				"@typescript-eslint/sort-type-union-intersection-members": "off", // often my ordering has some logic
 				"@typescript-eslint/strict-boolean-expressions": ["off", { allowNullableBoolean: true }], // useful but sometimes nags where imo it shouldn't
+				"@typescript-eslint/typedef": ["off", { arrowParameter: false, arrayDestructuring: false, objectDestructuring: false, variableDeclaration: false, variableDeclarationIgnoreFunction: false, memberVariableDeclaration: true, parameter: true, propertyDeclaration: true }],
 				"@typescript-eslint/unbound-method": ["off", { ignoreStatic: true }], // giving weird errors
 				"@typescript-eslint/unified-signatures": "off", // annoying in certain situations
 				// #regionend
