@@ -4,21 +4,19 @@
 	// https://github.com/AlansCodeLog/tsconfigs
 	"extends": "@alanscodelog/tsconfigs",
 	"compilerOptions": {
-		"baseUrl": "src"
+		"strictNullChecks": true,
+		"checkJs": true,
+		"allowJs": true,
 	},
 	// the libs are explicitly specified because otherwise typescript includes the dom by default
 	"lib": [
 		"esnext",
-		"typescript"
 	],
 	"include": [
-		"src/**/*.ts",
-		"src/**/*.js",
-		// needed or eslint will complain when trying to lint them
-		"tests/**/*.ts",
 		"tests/**/*.js",
 		"copy/**/*.js",
+		"rules/**/*.js",
 		"*.js"
-	],
+, "tests/noUnset"	],
 	"exclude": []
 }

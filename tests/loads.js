@@ -2,10 +2,12 @@
  * Checks that our config loads and has no errors or deprecated rules.
  */
 
-const { ESLint } = require("eslint")
+// const { ESLint } = require("eslint")
 
 
+import { ESLint } from "eslint"
 const eslint = new ESLint()
+
 eslint.lintFiles("tests/fixtures/**/*")
 	.then(async results => {
 		const formatter = await eslint.loadFormatter()
