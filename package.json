@@ -8,7 +8,7 @@
 		"print": "eslint --print-config .eslintrc.js",
 		"show-unset": "node tests/noUnset.js",
 		"lint:eslint": "eslint \"{src,tests,copy,rules}/**/*.{cjs,js,ts}\" \"*.{cjs,js,ts}\" --max-warnings=1 --report-unused-disable-directives",
-		"lint:commits": "commitlint --from $(git rev-list HEAD --not --remotes | tail -1)^ --to HEAD --verbose",
+		"lint:commits": "commitlint --from $(git rev-list --max-parents=0 HEAD) --to HEAD --verbose",
 		"test": "node tests/loads.js && npm run show-unset",
 		"postinstall": "node copy/postinstall.js",
 		"prepare": "husky"
@@ -32,9 +32,10 @@
 		"vue-eslint-parser": "^9.4.2"
 	},
 	"devDependencies": {
-		"@alanscodelog/commitlint-config": "^2.0.0",
-		"@alanscodelog/semantic-release-config": "^3.0.0",
+		"@alanscodelog/commitlint-config": "^3.0.1",
+		"@alanscodelog/semantic-release-config": "^4.0.1",
 		"@alanscodelog/tsconfigs": "^4.0.1",
+		"@commitlint/cli": "^19.3.0",
 		"@semantic-release/changelog": "^6.0.3",
 		"@semantic-release/commit-analyzer": "^12.0.0",
 		"@semantic-release/github": "^10.0.5",
@@ -43,7 +44,7 @@
 		"@types/eslint": "^8.56.10",
 		"@types/node": "^20.12.12",
 		"commitlint": "^19.3.0",
-		"conventional-changelog-conventionalcommits": "^8.0.0",
+		"conventional-changelog-conventionalcommits": "^7.0.0",
 		"husky": "^9.0.11",
 		"semantic-release": "^23.1.1",
 		"typescript": "^5.4.5"
