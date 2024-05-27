@@ -3,4 +3,4 @@
 
 echo "Running pre-commit hook"
 
-npm run test
+npm run test && npm run lint:eslint

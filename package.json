@@ -7,7 +7,8 @@
 	"scripts": {
 		"print": "eslint --print-config .eslintrc.js",
 		"show-unset": "node tests/noUnset.js",
-		"lint:eslint": "eslint \"{src,tests,copy,rules}/**/*.{cjs,js,ts}\" \"*.{cjs,js,ts}\" --max-warnings=1 --report-unused-disable-directives",
+		"lint:eslint": "eslint \"{tests,copy,rules}/**/*.{cjs,js,ts}\" \"*.{cjs,js,ts}\" --max-warnings=1 --report-unused-disable-directives",
+		"lint:eslint:test": "eslint \"{src}/**/*.{cjs,js,ts}\"",
 		"lint:commits": "commitlint --from $(git rev-list --max-parents=0 HEAD) --to HEAD --verbose",
 		"test": "node tests/loads.js && npm run show-unset",
 		"postinstall": "node copy/postinstall.js",
