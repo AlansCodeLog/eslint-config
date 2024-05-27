@@ -22,9 +22,9 @@ export default [
 			// #region STYLE - WHITESPACE
 			"@stylistic/array-bracket-newline": ["warn", "consistent"],
 			"@stylistic/array-element-newline": ["warn", "consistent"],
-			"@stylistic/func-call-spacing": "warn", // ⚠️
-			"@stylistic/space-infix-ops": "warn", // ⚠️
 			"@stylistic/comma-dangle": "off",
+			"@stylistic/func-call-spacing": "warn",
+			"@stylistic/space-infix-ops": "warn",
 			"@stylistic/object-curly-spacing": ["warn", "always", { objectsInObjects: true, arraysInObjects: false }],
 			"@stylistic/arrow-spacing": "warn",
 			"@stylistic/generator-star-spacing": ["warn", { before: false, after: true }],
