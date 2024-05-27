@@ -158,7 +158,11 @@ export default tsEslint.config(
 			// "@typescript-eslint/no-unnecessary-type-assertion": "warn",
 			"@typescript-eslint/prefer-namespace-keyword": "warn",
 			"@typescript-eslint/triple-slash-reference": "warn",
-			"@typescript-eslint/ban-ts-comment": ["warn", { "ts-expect-error": "allow-with-description", "ts-nocheck": "allow-with-description", minimumDescriptionLength: 1 }],
+			"@typescript-eslint/ban-ts-comment": ["warn", {
+				"ts-expect-error": "allow-with-description",
+				"ts-nocheck": "allow-with-description",
+				minimumDescriptionLength: 1,
+			}],
 			"@typescript-eslint/ban-tslint-comment": ["warn"],
 			// #regionend
 
@@ -213,7 +217,6 @@ export default tsEslint.config(
 			"@typescript-eslint/prefer-optional-chain": "warn",
 			"@typescript-eslint/prefer-reduce-type-parameter": "warn",
 			"@typescript-eslint/prefer-string-starts-ends-with": "warn",
-			"@typescript-eslint/prefer-ts-expect-error": "warn",
 			"@typescript-eslint/promise-function-async": "warn",
 			"@typescript-eslint/restrict-plus-operands": ["warn"],
 			"@typescript-eslint/restrict-template-expressions": ["warn", { allowNumber: true, allowBoolean: true, allowAny: true }],
@@ -230,7 +233,6 @@ export default tsEslint.config(
 			// #region UNUSED
 			// kept for reference and also `show-unset` script
 			"@typescript-eslint/no-unsafe-argument": "off",
-			"@typescript-eslint/ban-ts-ignore": "off",
 			"@typescript-eslint/ban-types": "off",
 			camelCase: "off",
 			"@typescript-eslint/camelcase": "off",
