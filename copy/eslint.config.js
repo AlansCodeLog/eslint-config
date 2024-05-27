@@ -9,7 +9,7 @@ export default config
 // 	{
 // 		files: [`**/*.{${allFileTypes.join(",")}}`],
 // 		ignores: [
-// 			// ...	
+// 			// ...
 // 		],
 // 	},
 // 	// RULE LINKS

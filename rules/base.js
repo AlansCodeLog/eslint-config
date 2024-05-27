@@ -48,7 +48,7 @@ export default [
 			},
 		},
 		ignores: [
-			 // for editors, so they try to lint files in here when we open them
+			// for editors, so they try to lint files in here when we open them
 			"**/coverage/",
 			"**/dist/",
 			"**/docs/",
