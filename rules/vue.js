@@ -9,9 +9,6 @@ export default [
 	...pluginVue.configs["flat/essential"],
 	{
 		files: ["**/*.vue"],
-		extends: [
-			"@vue/eslint-config-typescript",
-		],
 		languageOptions: {
 			parser: vueEslintParser,
 			parserOptions: {
@@ -20,6 +17,7 @@ export default [
 		},
 		rules: {
 			// #region INTERFERE
+			"no-unused-vars": "off",
 			"@typescript-eslint/typedef": "off",
 			// very annoying when defining emits
 			// also I would never probably never an overloaded function like this, let alone in a vue file
@@ -43,6 +41,7 @@ export default [
 				default: "shorthand",
 				named: "shorthand",
 			}],
+
 			// #regionend
 
 			// #region SPACING
