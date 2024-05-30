@@ -1,5 +1,7 @@
-![Build](https://github.com/alanscodelog/eslint-config/workflows/Build/badge.svg)
-[![Release](https://github.com/alanscodelog/eslint-config/workflows/Release/badge.svg)](https://www.npmjs.com/package/@alanscodelog/eslint-config)
+[![Build](https://github.com/alanscodelog/my-eslint-config/actions/workflows/build.yml/badge.svg)](https://github.com/alanscodelog/my-eslint-config/actions/workflows/build.yml)
+[![Release](https://github.com/alanscodelog/my-eslint-config/actions/workflows/release.yml/badge.svg)](https://github.com/alanscodelog/my-eslint-config/actions/workflows/release.yml)
+[![NPM Version (with latest tag)](https://img.shields.io/npm/v/%40alanscodelog%2Feslint-config/latest)](https://www.npmjs.com/package/@alanscodelog/eslint-config/v/latest)
+[![NPM Version (with beta tag)](https://img.shields.io/npm/v/%40alanscodelog%2Feslint-config/beta)](https://www.npmjs.com/package/@alanscodelog/eslint-config/v/beta)
 
 My preferred base eslint configs along with an "install" script for quickly setting up the configs to extend from this one.
 
