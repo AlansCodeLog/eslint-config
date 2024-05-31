@@ -149,6 +149,7 @@ export default [
 			"import/no-absolute-path": "warn",
 			// "import/no-anonymous-default-export": ["warn", { allowArray: false, allowArrowFunction: true, allowAnonymousClass: true, allowAnonymousFunction: true, allowCallExpression: true, allowLiteral: false, allowObject: true }],
 			// "import/no-deprecated": "warn",
+			"no-duplicate-imports": "off",
 			"import/no-duplicates": ["warn", { considerQueryString: true }],
 			"import/no-extraneous-dependencies": ["warn", {
 			// confusing but if true or matches DOESN' enforce the rule
@@ -164,7 +165,6 @@ export default [
 				noUselessIndex: false,
 			}],
 			"import/no-webpack-loader-syntax": "warn",
-			"no-duplicate-imports": ["warn", { includeExports: false }], // ⚠️ // #eslint
 			"no-restricted-imports": ["warn", {
 				patterns: [
 					{
