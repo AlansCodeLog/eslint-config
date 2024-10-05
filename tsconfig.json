@@ -13,11 +13,13 @@
 		"esnext",
 	],
 	"include": [
-		"tests/**/*.js",
-		"copy/**/*.js",
-		"rules/**/*.js",
+		"tests/**/*",
+		"copy/**/*",
+		"src/**/*",
+		"rules/**/*",
 		"*.js",
-		"tests/noUnset"
+		"*.ts",
+		"*.cjs",
 	],
 	"exclude": []
 }

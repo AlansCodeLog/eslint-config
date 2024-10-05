@@ -2,10 +2,9 @@
  * Checks that our config loads and has no errors or deprecated rules.
  */
 
-// const { ESLint } = require("eslint")
-
-
 import { ESLint } from "eslint"
+
+
 const eslint = new ESLint()
 
 eslint.lintFiles("tests/fixtures/**/*")

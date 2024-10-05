@@ -16,6 +16,11 @@ export default [
 			parser: vueEslintParser,
 			parserOptions: {
 				parser: "@typescript-eslint/parser",
+				tsconfigRootDir: import.meta.dirname,
+				extraFileExtensions,
+				projectService: {
+					allowDefaultProject: ["*.js", "*.ts", "*.vue", "*.cjs", "*.mjs"],
+				},
 			},
 		},
 		rules: {

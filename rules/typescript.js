@@ -27,12 +27,10 @@ export default tsEslint.config(
 		languageOptions: {
 			parser: tsParser,
 			parserOptions: {
-				// https://typescript-eslint.io/packages/parser/#experimental_useprojectservice
-				// eslint-disable-next-line camelcase
-				EXPERIMENTAL_useProjectService: true,
-				// project: ["./tsconfig.eslint.json", "./tsconfig.json"],
-				// tsconfigRootDir: import.meta.dirname,
-				extraFileExtensions: [".vue"],
+				tsconfigRootDir: import.meta.dirname,
+				projectService: {
+					allowDefaultProject: ["*.js", "*.ts", "*.cjs", "*.mjs"],
+				},
 			},
 		},
 		plugins: {
