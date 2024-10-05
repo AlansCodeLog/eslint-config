@@ -147,7 +147,6 @@ export default tsEslint.config(
 			"@typescript-eslint/only-throw-error": "warn", // ⭐
 			"no-unused-vars": "off",
 			"@typescript-eslint/no-unused-vars": ["warn", { vars: "all", args: "after-used", ignoreRestSiblings: false, argsIgnorePattern: "^_" }], // ⭐
-			"@typescript-eslint/no-var-requires": "warn",
 			"@typescript-eslint/prefer-for-of": "warn",
 			"@typescript-eslint/prefer-readonly": "warn",
 			// #regionend
@@ -172,7 +171,10 @@ export default tsEslint.config(
 			"@typescript-eslint/default-param-last": "warn",
 			"@typescript-eslint/explicit-function-return-type": ["warn", { allowExpressions: true, allowTypedFunctionExpressions: true, allowHigherOrderFunctions: true, allowDirectConstAssertionInArrowFunctions: true, allowConciseArrowFunctionExpressionsStartingWithVoid: true }],
 			"@typescript-eslint/no-base-to-string": "warn",
-			"@typescript-eslint/no-empty-interface": ["warn", { allowSingleExtends: true }],
+			"@typescript-eslint/no-empty-object-type": ["warn", {
+				// i never do this accidentally in a way that might cause a problem
+				allowInterfaces: "always",
+			}],
 			"@typescript-eslint/no-extra-non-null-assertion": "warn",
 			"@typescript-eslint/no-floating-promises": ["warn", { ignoreIIFE: true }],
 			"@typescript-eslint/no-for-in-array": "warn",
@@ -180,7 +182,6 @@ export default tsEslint.config(
 			"@typescript-eslint/no-misused-new": "warn",
 			"@typescript-eslint/no-misused-promises": "warn",
 			"@typescript-eslint/no-non-null-asserted-optional-chain": "warn",
-			"@typescript-eslint/no-require-imports": "warn",
 			"@typescript-eslint/no-this-alias": ["warn", { allowDestructuring: true, allowedNames: ["self", "context"]}],
 			"@typescript-eslint/no-unnecessary-boolean-literal-compare": "warn",
 			"@typescript-eslint/no-unnecessary-qualifier": "warn",
@@ -196,8 +197,6 @@ export default tsEslint.config(
 			"@typescript-eslint/no-invalid-this": "warn", // ⭐
 			"no-loop-func": "off",
 			"@typescript-eslint/no-loop-func": "warn", // ⭐
-			"no-loss-of-precision": "off",
-			"@typescript-eslint/no-loss-of-precision": "warn", // ⭐
 			"no-redeclare": "off",
 			"@typescript-eslint/no-redeclare": ["warn", { ignoreDeclarationMerge: true }], // ⭐
 			"no-restricted-imports": "off",
@@ -220,7 +219,6 @@ export default tsEslint.config(
 			"@typescript-eslint/promise-function-async": "warn",
 			"@typescript-eslint/restrict-plus-operands": ["warn"],
 			"@typescript-eslint/restrict-template-expressions": ["warn", { allowNumber: true, allowBoolean: true, allowAny: true }],
-			"no-return-await": "off",
 			"@typescript-eslint/return-await": "warn",
 			"@typescript-eslint/switch-exhaustiveness-check": "warn",
 
@@ -232,6 +230,7 @@ export default tsEslint.config(
 
 			// #region UNUSED
 			// kept for reference and also `show-unset` script
+			"@typescript-eslint/no-require-imports": "off",
 			"@typescript-eslint/no-unsafe-argument": "off",
 			"@typescript-eslint/ban-types": "off",
 			camelCase: "off",
