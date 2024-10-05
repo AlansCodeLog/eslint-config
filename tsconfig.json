@@ -16,7 +16,8 @@
 		"tests/**/*.js",
 		"copy/**/*.js",
 		"rules/**/*.js",
-		"*.js"
-, "tests/noUnset"	],
+		"*.js",
+		"tests/noUnset"
+	],
 	"exclude": []
 }

@@ -3,7 +3,7 @@ import baseConfig, { allFileTypes } from "./base.js"
 /**
  * ⚠️ means the rule has a typescript version is disabled in typescript files, but any changes to it should be "synced" with the typescript version.
  */
-// /** @type {import('eslint').Linter.FlatConfig[]} */
+/** @type {import('eslint').Linter.FlatConfig[]} */
  
 export default [
 	...baseConfig,

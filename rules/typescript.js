@@ -17,8 +17,6 @@ const requireLeadingUnderscore = { leadingUnderscore: "require", trailingUndersc
 /** Prevents underscore only identifiers from matching so they match the null rule instead and aren't checked */
 const fixExceptions = { filter: { regex: "^(_+?|_constructor|_mixin)$", match: false } }
 
-
-// /** @type {import('eslint').Linter.FlatConfig[]} */
 export default tsEslint.config(
 	...jsConfig,
 	{

@@ -14,9 +14,13 @@ export const allFileTypes = [
 	"tsx",
 	"jsx",
 ]
-
-// /** @type {import('eslint').Linter.FlatConfig[]} */
+// workaround for https:// github.com/eslint-stylistic/eslint-stylistic/issues/506
+/** @type any */
+const stylisticAsAny = stylistic
+/** @type {import('eslint').ESLint.Plugin}*/
+const stylisticAsPlugin = stylisticAsAny
  
+/** @type {import('eslint').Linter.FlatConfig[]} */
 export default [
 	/**
 	 * Technically could go in js config, but nicer to have these types of rules separated. Mostly are plugin rules, except for some eslint import related rules marked // #eslint.
@@ -35,7 +39,7 @@ export default [
 			},
 		},
 		plugins: {
-			"@stylistic": stylistic,
+			"@stylistic": stylisticAsPlugin,
 			"simple-import-sort": simpleImportSort,
 			import: importPlugin,
 			jsdoc: jsdocPlugin,
