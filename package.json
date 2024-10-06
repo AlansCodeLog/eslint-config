@@ -1,6 +1,6 @@
 {
 	"name": "@alanscodelog/eslint-config",
-	"version": "5.0.0-beta.5",
+	"version": "0.0.0-semantically-released",
 	"description": "My eslint config.",
 	"main": "eslint.config.js",
 	"type": "module",
@@ -33,7 +33,7 @@
 		"vue-eslint-parser": "^9.4.3"
 	},
 	"devDependencies": {
-		"@alanscodelog/commitlint-config": "^3.0.1",
+		"@alanscodelog/commitlint-config": "^3.0.2",
 		"@alanscodelog/semantic-release-config": "^5.0.1",
 		"@alanscodelog/tsconfigs": "^4.0.1",
 		"@commitlint/cli": "^19.5.0",
