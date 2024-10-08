@@ -1,4 +1,4 @@
-/* eslint-disable */
+ 
 /* We need the octal escapes, this will not run in strict mode. */
 
 const yellow = "\x1b[33m"

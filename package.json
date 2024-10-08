@@ -2,7 +2,7 @@
 	"name": "@alanscodelog/eslint-config",
 	"version": "0.0.0-semantically-released",
 	"description": "My eslint config.",
-	"main": "eslint.config.js",
+	"main": "config.js",
 	"type": "module",
 	"scripts": {
 		"print": "eslint --print-config .eslintrc.js",
@@ -35,7 +35,7 @@
 	"devDependencies": {
 		"@alanscodelog/commitlint-config": "^3.0.2",
 		"@alanscodelog/semantic-release-config": "^5.0.1",
-		"@alanscodelog/tsconfigs": "^4.0.1",
+		"@alanscodelog/tsconfigs": "^5.0.0",
 		"@commitlint/cli": "^19.5.0",
 		"@semantic-release/changelog": "^6.0.3",
 		"@semantic-release/commit-analyzer": "^13.0.0",
@@ -53,7 +53,7 @@
 	"repository": "https://github.com/alanscodelog/eslint-config",
 	"license": "MIT",
 	"files": [
-		"eslint.config.js",
+		"config.js",
 		"rules",
 		"install.sh",
 		"copy"

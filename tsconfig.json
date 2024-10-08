@@ -14,12 +14,8 @@
 	],
 	"include": [
 		"tests/**/*",
-		"copy/**/*",
 		"src/**/*",
 		"rules/**/*",
-		"*.js",
-		"*.ts",
-		"*.cjs",
+		"copy/**/*",
 	],
-	"exclude": []
 }

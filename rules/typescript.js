@@ -2,6 +2,7 @@ import tsParser from "@typescript-eslint/parser"
 import tsEslint from "typescript-eslint"
 
 import { allFileTypes } from "./base.js"
+import { allowDefaultProjectGlobs } from "./helpers.js"
 /**
  * Just extending js will only make the rules apply to js files. We want them to also apply to typescript files. This config will take care of disabling any rules that interfere.
  */
@@ -27,9 +28,9 @@ export default tsEslint.config(
 		languageOptions: {
 			parser: tsParser,
 			parserOptions: {
-				tsconfigRootDir: import.meta.dirname,
+				tsconfigRootDir: process.cwd(),
 				projectService: {
-					allowDefaultProject: ["*.js", "*.ts", "*.cjs", "*.mjs"],
+					allowDefaultProject: allowDefaultProjectGlobs,
 				},
 			},
 		},

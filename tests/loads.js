@@ -1,13 +1,10 @@
 /**
  * Checks that our config loads and has no errors or deprecated rules.
  */
-
 import { ESLint } from "eslint"
-
-
 const eslint = new ESLint()
 
-eslint.lintFiles("tests/fixtures/**/*")
+eslint.lintFiles("*.js")
 	.then(async results => {
 		const formatter = await eslint.loadFormatter()
 		const prettyRes = formatter.format(results)
