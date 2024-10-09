@@ -2,8 +2,11 @@
 	"name": "@alanscodelog/eslint-config",
 	"version": "5.0.0",
 	"description": "My eslint config.",
-	"main": "config.js",
+	"main": "./config.js",
 	"type": "module",
+	"exports": {
+		".": "./config.js"
+	},
 	"scripts": {
 		"print": "eslint --print-config .eslintrc.js",
 		"lint:eslint": "eslint \"{tests,copy,rules}/**/*.{cjs,js,ts}\" \"*.{cjs,js,ts}\" --max-warnings=1 --report-unused-disable-directives",
