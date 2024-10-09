@@ -1,6 +1,6 @@
 {
 	"name": "@alanscodelog/eslint-config",
-	"version": "5.0.1",
+	"version": "5.0.2",
 	"description": "My eslint config.",
 	"main": "./config.js",
 	"type": "module",
