@@ -11,9 +11,9 @@ on:
     types: [ release ]
 
 jobs:
+
   build:
     uses: ./.github/workflows/reusable-build.yml
-    if: "! contains(toJSON(github.event.commits.*.message), '[skip ci]') && ! contains(toJSON(github.event.commits.*.message), '(no-release)')"
     secrets: inherit
 
   release:
