@@ -13,7 +13,7 @@
 		"lint:eslint:test": "eslint \"{src}/**/*.{cjs,js,ts}\"",
 		"lint:commits": "commitlint --from $(git rev-list --max-parents=0 HEAD) --to HEAD --verbose",
 		"test": "node tests/loads.js",
-		"lint": "npm run lint:eslint",
+		"lint": "pnpm lint:eslint",
 		"postinstall": "node copy/postinstall.js",
 		"prepare": "husky"
 	},
