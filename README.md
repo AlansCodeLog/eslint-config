@@ -33,9 +33,19 @@ export default tsEslintConfig( // this is just a re-export of tsEslint.config
 	...vueConfig,
 	{
 		files: [`**/*.{${allFileTypes.join(",")}}`],
+		// rules: ...
+	}
+	{
 		ignores: [
 			// ...	
 		],
+		languageOptions: {
+			parserOptions: {
+				projectService: {
+					// defaultProject: "./tsconfig.eslint.json",
+				}
+			}
+		},
 	},
 	// RULE LINKS
 	// Eslint: https://eslint.org/docs/rules/
