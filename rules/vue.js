@@ -1,7 +1,6 @@
 import pluginVue from "eslint-plugin-vue"
 import vueEslintParser from "vue-eslint-parser"
 
-import { allowDefaultProjectGlobs } from "./helpers.js"
 import tsConfig from "./typescript.js"
 // see https://typescript-eslint.io/troubleshooting/typed-linting/performance/#project-service-issues
 const extraFileExtensions = [".vue"]
@@ -19,7 +18,6 @@ export default [
 				tsconfigRootDir: process.cwd(),
 				extraFileExtensions,
 				projectService: {
-					allowDefaultProject: [...allowDefaultProjectGlobs, "*.vue"]
 				},
 			},
 		},
