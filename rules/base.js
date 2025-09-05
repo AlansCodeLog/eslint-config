@@ -41,9 +41,6 @@ export default defineConfig(
 		},
 		plugins: {
 			"@stylistic": stylisticAsPlugin,
-			"simple-import-sort": simpleImportSort,
-			import: importPlugin,
-			jsdoc: jsdocPlugin,
 		},
 		settings: {
 			"import/ignore": ["node_modules"],
