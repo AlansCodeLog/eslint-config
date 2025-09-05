@@ -46,11 +46,7 @@ export default defineConfig(
 				},
 			},
 		},
-	},
-	{
-		files: ["**/*.ts"],
 		rules: {
-				
 			// #region JSDOC
 			"jsdoc/no-types": ["warn", { contexts: ["any"]}],
 			"jsdoc/require-description": ["warn", { descriptionStyle: "body" }],

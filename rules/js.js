@@ -8,7 +8,6 @@ import baseConfig, { allFileTypes } from "./base.js"
 export default [
 	...baseConfig,
 	{
-		files: [`**/*.{${allFileTypes.join(",")}}`],
 		rules: {
 			// #region STYLE - CLASS RELATED
 			"accessor-pairs": "warn",
@@ -326,7 +325,6 @@ export default [
 	{
 		files: [`{tests,test}/**/*.{${allFileTypes.join(",")}}`],
 		rules: {
-			
 			"import/no-unused-modules": "off",
 			"import/no-extraneous-dependencies": "off",
 			"no-new": "off",
