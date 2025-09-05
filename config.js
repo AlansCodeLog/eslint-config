@@ -21,6 +21,10 @@ export const jsdocConfig = _jsdocConfig
 import _importsConfig from "./rules/imports.js"
 export const importsConfig = _importsConfig
 
+import { nuxtModuleConfig as _nuxtModuleConfig, nuxtModuleAppends as _nuxtModuleAppends } from "./rules/nuxtModule.js"
+export const nuxtModuleAppends = _nuxtModuleAppends	
+export const nuxtModuleConfig = _nuxtModuleConfig
+
 export const tsEslintConfig = tsEslint.config
 
 export default tsEslint.config(
