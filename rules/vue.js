@@ -120,7 +120,7 @@ export default defineConfig(
 				],
 				alphabetical: false,
 			}],
-			"vue/component-tags-order": ["warn", {
+			"vue/block-order": ["warn", {
 				order: [["docs", "template", "script"], "style"],
 			}],
 			"vue/order-in-components": ["warn", {
