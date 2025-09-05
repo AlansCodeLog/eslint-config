@@ -1,3 +1,4 @@
+import { defineConfig } from "eslint/config";
 import stylistic from "@stylistic/eslint-plugin"
 import importPlugin from "eslint-plugin-import"
 import jsdocPlugin from "eslint-plugin-jsdoc"
@@ -20,8 +21,7 @@ const stylisticAsAny = stylistic
 /** @type {import('eslint').ESLint.Plugin}*/
 const stylisticAsPlugin = stylisticAsAny
  
-/** @type {import('eslint').Linter.FlatConfig[]} */
-export default [
+export default defineConfig(
 	/**
 	 * Technically could go in js config, but nicer to have these types of rules separated. Mostly are plugin rules, except for some eslint import related rules marked // #eslint.
 	 */
@@ -213,4 +213,4 @@ export default [
 		// #regionend
 		},
 	},
-]
+)

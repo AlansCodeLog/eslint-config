@@ -3,7 +3,7 @@ import baseConfig, { allFileTypes } from "./base.js"
 /**
  * ⚠️ means the rule has a typescript version is disabled in typescript files, but any changes to it should be "synced" with the typescript version.
  */
-/** @type {import('eslint').Linter.FlatConfig[]} */
+/** @type {import('eslint').Linter.Config[]} */
  
 export default [
 	...baseConfig,
@@ -23,7 +23,7 @@ export default [
 			"@stylistic/array-bracket-newline": ["warn", "consistent"],
 			"@stylistic/array-element-newline": ["warn", "consistent"],
 			"@stylistic/comma-dangle": "off",
-			"@stylistic/func-call-spacing": "warn",
+			"@stylistic/function-call-spacing": "warn",
 			"@stylistic/space-infix-ops": "warn",
 			"@stylistic/object-curly-spacing": ["warn", "always", { objectsInObjects: true, arraysInObjects: false }],
 			"@stylistic/arrow-spacing": "warn",

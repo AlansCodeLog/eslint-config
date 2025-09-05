@@ -1,3 +1,4 @@
+import { defineConfig } from "eslint/config";
 import tsParser from "@typescript-eslint/parser"
 import tsEslint from "typescript-eslint"
 
@@ -17,7 +18,7 @@ const requireLeadingUnderscore = { leadingUnderscore: "require", trailingUndersc
 /** Prevents underscore only identifiers from matching so they match the null rule instead and aren't checked */
 const fixExceptions = { filter: { regex: "^(_+?|_constructor|_mixin)$", match: false } }
 
-export default tsEslint.config(
+export default defineConfig(
 	...jsConfig,
 	{
 		files: [

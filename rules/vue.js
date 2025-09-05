@@ -1,3 +1,4 @@
+import { defineConfig } from "eslint/config";
 import pluginVue from "eslint-plugin-vue"
 import vueEslintParser from "vue-eslint-parser"
 
@@ -5,8 +6,8 @@ import tsConfig from "./typescript.js"
 // see https://typescript-eslint.io/troubleshooting/typed-linting/performance/#project-service-issues
 const extraFileExtensions = [".vue"]
 
-/** @type {import('eslint').Linter.FlatConfig[]} */
-export default [
+
+export default defineConfig(
 	...tsConfig,
 	...pluginVue.configs["flat/essential"],
 	{
@@ -273,5 +274,4 @@ export default [
 			// #endregion
 		},
 	},
-]
-
+)
