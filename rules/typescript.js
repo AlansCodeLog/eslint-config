@@ -122,6 +122,17 @@ export default defineConfig(
 				{ selector: "typeParameter", format: ["StrictPascalCase"], prefix: ["T"], ...forbidUnderscores },
 				// UPPER_Maybe_PascalCase...
 				{ selector: "enum", format: null, custom: { match: true, regex: "^(?<UPPER_Maybe_PascalCase>(?!_[a-z])_*[A-Za-z]+(?!_[a-z])_*)+$" }, ...allowSingleUnderscores },
+				// allow anything starting with HTML as is often common for html element types, etc
+				{
+					selector: ["default"],
+					format: null,
+					leadingUnderscore: "allow",
+					trailingUnderscore: "allow",
+					custom: {
+						regex: "^HTML",
+						match: true,
+					},
+				},
 			],
 			// #regionend
 
