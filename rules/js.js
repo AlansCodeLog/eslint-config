@@ -81,7 +81,7 @@ export default [
 
 			// #region STYLE - DELIMITERS / OPERATORS
 			"@stylistic/no-extra-semi": "warn",
-			"@stylistic/quotes": ["warn", "double", { avoidEscape: false, allowTemplateLiterals: true }],
+			"@stylistic/quotes": ["warn", "double", { avoidEscape: false, allowTemplateLiterals: "always"}],
 			"@stylistic/semi": ["warn", "never"],
 
 			"@stylistic/jsx-quotes": "warn",

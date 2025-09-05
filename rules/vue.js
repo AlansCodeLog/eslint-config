@@ -180,7 +180,6 @@ export default defineConfig(
 			}],
 			"vue/no-constant-condition": "warn",
 			"vue/no-deprecated-v-is": "warn",
-			"vue/no-invalid-model-keys": "warn",
 			"vue/no-lone-template": ["warn", { ignoreAccessible: false }],
 			"vue/no-multiple-slot-args": "warn",
 			"vue/no-template-shadow": "warn",
