@@ -4,7 +4,6 @@ import { allowDefaultProjectGlobs as _allowDefaultProjectGlobs } from "./rules/h
 export const allowDefaultProjectGlobs = _allowDefaultProjectGlobs
 
 import { allFileTypes as _allFileTypes } from "./rules/base.js"
-
 export const allFileTypes = _allFileTypes
 
 import _jsConfig from "./rules/js.js"
@@ -15,6 +14,12 @@ export const typescriptConfig = _typescriptConfig
 
 import _vueConfig from "./rules/vue.js"
 export const vueConfig = _vueConfig
+
+import _jsdocConfig from "./rules/jsdoc.js"
+export const jsdocConfig = _jsdocConfig
+
+import _importsConfig from "./rules/imports.js"
+export const importsConfig = _importsConfig
 
 export const tsEslintConfig = tsEslint.config
 
