@@ -5,10 +5,6 @@ import jsdocConfig from "./jsdoc.js"
 import vueConfig from "./vue.js"
 const filtered = vueConfig
 	.flatMap(entry => ((!entry.files?.find(g => g.includes("test"))) && entry.rules) ? Object.entries(entry.rules) : [])
-// @ts-expect-error .
-delete importsConfig[0].plugins.import // nuxt already sets this up
-// @ts-expect-error .
-delete jsdocConfig[0].plugins.jsdoc // nuxt already sets this up
 
 export const nuxtModuleConfig = {
 	features: {
@@ -34,8 +30,16 @@ export const nuxtModuleConfig = {
 
 export const nuxtModuleAppends =
 	[
-		...importsConfig,
-		...jsdocConfig,
+		{
+			...importsConfig[0],
+			plugins: {},
+		},
+		{
+			...jsdocConfig[0],
+			plugins: {},
+		},
+		...importsConfig.slice(1),
+		...jsdocConfig.slice(1),
 		{
 
 			rules: {
