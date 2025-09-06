@@ -69,7 +69,8 @@ export const nuxtModuleAppends =
 					"@typescript-eslint/no-empty-object-type",
 					"@typescript-eslint/ban-ts-comment",
 					"@typescript-eslint/no-this-alias",
-					"@typescript-eslint/no-explicit-any"
+					"@typescript-eslint/no-explicit-any",
+					"@typescript-eslint/switch-exhaustiveness-check"
 				].includes(key))
 			)
 		}

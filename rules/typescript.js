@@ -223,7 +223,10 @@ export default defineConfig(
 			"@typescript-eslint/restrict-plus-operands": ["warn"],
 			"@typescript-eslint/restrict-template-expressions": ["warn", { allowNumber: true, allowBoolean: true, allowAny: true }],
 			"@typescript-eslint/return-await": "warn",
-			"@typescript-eslint/switch-exhaustiveness-check": "warn",
+			"@typescript-eslint/switch-exhaustiveness-check": ["warn", {
+				considerDefaultExhaustiveForUnions: true
+			}],
+
 
 			// #regionend
 
