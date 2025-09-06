@@ -1,3 +1,3 @@
-import { tsEslintConfig } from "./config.js"
+import config from "./config.js"
 
-export default tsEslintConfig()
+export default config
