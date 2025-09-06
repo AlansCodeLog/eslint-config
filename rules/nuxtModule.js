@@ -33,8 +33,9 @@ export const nuxtModuleAppends =
 		{
 			...importsConfig[0],
 			plugins: {
-				...importsConfig[0].plugins,
-				import: undefined,
+				// @ts-expect-error it exists
+				"simple-import-sort": importsConfig[0].plugins["simple-import-sort"]
+
 			},
 		},
 		{
