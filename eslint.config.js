@@ -1,3 +1,8 @@
-import config from "./config.js"
+import { defineConfig } from "eslint/config"
 
-export default config
+import { vueConfig } from "./config.js"
+
+export default defineConfig(
+	vueConfig,
+)
+

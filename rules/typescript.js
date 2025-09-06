@@ -1,8 +1,7 @@
-import { defineConfig } from "eslint/config";
 import tsParser from "@typescript-eslint/parser"
 import tsEslint from "typescript-eslint"
 
-import { allFileTypes } from "./base.js"
+import { allFileTypes } from "./helpers.js"
 /**
  * Just extending js will only make the rules apply to js files. We want them to also apply to typescript files. This config will take care of disabling any rules that interfere.
  */
@@ -18,9 +17,11 @@ const requireLeadingUnderscore = { leadingUnderscore: "require", trailingUndersc
 /** Prevents underscore only identifiers from matching so they match the null rule instead and aren't checked */
 const fixExceptions = { filter: { regex: "^(_+?|_constructor|_mixin)$", match: false } }
 
-export default defineConfig(
+/** @type {import('eslint').Linter.Config[]} */
+export default [
 	...jsConfig,
 	{
+		name: "typescript/base",
 		files: [
 			"**/*.d.ts",
 			`**/*.{${allFileTypes.filter(f => !f.includes(".js")).join(",")}}`,
@@ -30,6 +31,7 @@ export default defineConfig(
 			parserOptions: {
 				tsconfigRootDir: process.cwd(),
 				projectService: {
+					defaultProject: "tsconfig.json",
 				},
 			},
 		},
@@ -103,7 +105,7 @@ export default defineConfig(
 				"warn",
 				{ selector: ["default"], format: null, ...allowAnyUnderscores, filter: { ...fixExceptions.filter, match: true } },
 				{ selector: ["default"], format: ["strictCamelCase"], ...allowSingleUnderscores, ...fixExceptions },
-				{ selector: "import", format: ["strictCamelCase", "PascalCase"]},
+				{ selector: "import", format: ["strictCamelCase", "PascalCase"], ...allowAnyUnderscores },
 				{ selector: "default", modifiers: ["unused"], format: ["strictCamelCase", "UPPER_CASE"], ...requireLeadingUnderscore, ...fixExceptions },
 
 				{ selector: ["enumMember", "typeProperty"], format: ["strictCamelCase", "UPPER_CASE"], ...allowSingleUnderscores, ...fixExceptions },
@@ -303,5 +305,5 @@ export default defineConfig(
 			"@typescript-eslint/explicit-function-return-type": "off",
 		},
 	},
-)
+]
 

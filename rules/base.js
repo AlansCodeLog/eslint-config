@@ -1,33 +1,17 @@
-import { defineConfig } from "eslint/config";
 import stylistic from "@stylistic/eslint-plugin"
-import importPlugin from "eslint-plugin-import"
-import jsdocPlugin from "eslint-plugin-jsdoc"
-import simpleImportSort from "eslint-plugin-simple-import-sort"
 import globals from "globals"
-import  jsdocRules  from "./jsdoc.js"
-import  importsRules  from "./imports.js"
-export const allFileTypes = [
-	"js",
-	"ts",
-	"cts",
-	"mts",
-	"vue",
-	"cjs",
-	"mjs",
-	"tsx",
-	"jsx",
-]
+
+import importsRules from "./imports.js"
+import jsdocRules from "./jsdoc.js"
+
 // workaround for https:// github.com/eslint-stylistic/eslint-stylistic/issues/506
-/** @type any */
-const stylisticAsAny = stylistic
-/** @type {import('eslint').ESLint.Plugin}*/
-const stylisticAsPlugin = stylisticAsAny
- 
-export default defineConfig(
+/** @type {import('eslint').Linter.Config[]} */
+export default [
 	/**
 	 * Technically could go in js config, but nicer to have these types of rules separated. Mostly are plugin rules, except for some eslint import related rules marked // #eslint.
 	 */
 	{
+		name: "base",
 		linterOptions: {
 			reportUnusedDisableDirectives: "warn",
 		},
@@ -40,7 +24,7 @@ export default defineConfig(
 			},
 		},
 		plugins: {
-			"@stylistic": stylisticAsPlugin,
+			"@stylistic": stylistic,
 		},
 		settings: {
 			"import/ignore": ["node_modules"],
@@ -56,6 +40,6 @@ export default defineConfig(
 			"**/docs/",
 		],
 	},
-	jsdocRules,
-	importsRules,
-)
+	...jsdocRules,
+	...importsRules,
+]

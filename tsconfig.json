@@ -13,6 +13,7 @@
 		"esnext",
 	],
 	"include": [
+		"*.js",
 		"tests/**/*",
 		"src/**/*",
 		"rules/**/*",

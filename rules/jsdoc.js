@@ -1,19 +1,14 @@
-import { defineConfig } from "eslint/config";
-import stylistic from "@stylistic/eslint-plugin"
-import importPlugin from "eslint-plugin-import"
-import jsdocPlugin from "eslint-plugin-jsdoc"
-import simpleImportSort from "eslint-plugin-simple-import-sort"
-import globals from "globals"
+import jsdoc from "eslint-plugin-jsdoc"
 
-
- 
-export default defineConfig(
+/** @type {import('eslint').Linter.Config[]} */
+export default [
 	/**
 	 * Technically could go in js config, but nicer to have these types of rules separated. Mostly are plugin rules, except for some eslint import related rules marked // #eslint.
 	 */
 	{
+		name: "jsdoc/base",
 		plugins: {
-			jsdoc: jsdocPlugin,
+			jsdoc: jsdoc ?? "WTF",
 		},
 		settings: {
 			jsdoc: {
@@ -69,4 +64,4 @@ export default defineConfig(
 			// #regionend
 		},
 	},
-)
+]

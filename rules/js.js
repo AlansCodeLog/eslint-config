@@ -1,10 +1,10 @@
-import baseConfig, { allFileTypes } from "./base.js"
+import baseConfig from "./base.js"
+import { allFileTypes } from "./helpers.js"
 
 /**
  * ⚠️ means the rule has a typescript version is disabled in typescript files, but any changes to it should be "synced" with the typescript version.
  */
 /** @type {import('eslint').Linter.Config[]} */
- 
 export default [
 	...baseConfig,
 	{
@@ -80,7 +80,7 @@ export default [
 
 			// #region STYLE - DELIMITERS / OPERATORS
 			"@stylistic/no-extra-semi": "warn",
-			"@stylistic/quotes": ["warn", "double", { avoidEscape: false, allowTemplateLiterals: "always"}],
+			"@stylistic/quotes": ["warn", "double", { avoidEscape: false, allowTemplateLiterals: "always" }],
 			"@stylistic/semi": ["warn", "never"],
 
 			"@stylistic/jsx-quotes": "warn",

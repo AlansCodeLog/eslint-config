@@ -4,7 +4,7 @@
 import { ESLint } from "eslint"
 const eslint = new ESLint()
 
-eslint.lintFiles("*.js")
+void eslint.lintFiles("*.js")
 	.then(async results => {
 		const formatter = await eslint.loadFormatter()
 		const prettyRes = formatter.format(results)

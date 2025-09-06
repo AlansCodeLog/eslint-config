@@ -3,14 +3,17 @@ import config from "@alanscodelog/eslint-config"
 export default config
 // // advanced
 // import { allFileTypes, tsEslintConfig, vueConfig } from "@alanscodelog/eslint-config"
-// export default tsEslintConfig( // this is just a re-export of tsEslint.config
+// import { defineConfig } from "eslint/config"
+// export default defineConfig( // this is just a re-export of tsEslint.config
 // 	// https://github.com/AlansCodeLog/eslint-config
-// 	...vueConfig,
 // 	{
-// 		files: [`**/*.{${allFileTypes.join(",")}}`],
+// 		extends: [ vueConfig ],
 // 		ignores: [
 // 			// ...
 // 		],
+// 	}
+// 	{
+// 		files: [`**/*.{${allFileTypes.join(",")}}`],
 // 	},
 // 	// RULE LINKS
 // 	// Eslint: https://eslint.org/docs/rules/

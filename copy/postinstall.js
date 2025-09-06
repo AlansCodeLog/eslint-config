@@ -1,4 +1,3 @@
- 
 /* We need the octal escapes, this will not run in strict mode. */
 
 const yellow = "\x1b[33m"
@@ -8,4 +7,5 @@ const message = `${yellow
 Note: This will overwrite "eslint.config.js".
 ./node_modules/@alanscodelog/eslint-config/install.sh${
  reset}`
+// eslint-disable-next-line no-console
 console.log(message)

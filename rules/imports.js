@@ -1,20 +1,14 @@
-import { defineConfig } from "eslint/config";
-import stylistic from "@stylistic/eslint-plugin"
 import importPlugin from "eslint-plugin-import"
-import jsdocPlugin from "eslint-plugin-jsdoc"
 import simpleImportSort from "eslint-plugin-simple-import-sort"
-import globals from "globals"
 // workaround for https:// github.com/eslint-stylistic/eslint-stylistic/issues/506
-/** @type any */
-const stylisticAsAny = stylistic
-/** @type {import('eslint').ESLint.Plugin}*/
-const stylisticAsPlugin = stylisticAsAny
- 
-export default defineConfig(
+
+/** @type {import('eslint').Linter.Config[]} */
+export default [
 	/**
 	 * Technically could go in js config, but nicer to have these types of rules separated. Mostly are plugin rules, except for some eslint import related rules marked // #eslint.
 	 */
 	{
+		name: "imports/base",
 		plugins: {
 			"simple-import-sort": simpleImportSort,
 			import: importPlugin,
@@ -30,7 +24,7 @@ export default defineConfig(
 				// Side effect imports.
 					["^\\u0000"],
 					// Packages.
-					["^@?\\\w"],
+					["^@?\\w"],
 					// Sibling file.
 					["^\\."],
 					[
@@ -110,4 +104,4 @@ export default defineConfig(
 			// #regionend
 		},
 	},
-)
+]
