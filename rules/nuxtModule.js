@@ -32,7 +32,10 @@ export const nuxtModuleAppends =
 	[
 		{
 			...importsConfig[0],
-			plugins: {},
+			plugins: {
+				...importsConfig[0].plugins,
+				import: undefined,
+			},
 		},
 		{
 			...jsdocConfig[0],
