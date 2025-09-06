@@ -1,4 +1,4 @@
-import tsEslint from "typescript-eslint"
+import { defineConfig } from "eslint/config"
 
 import { allowDefaultProjectGlobs as _allowDefaultProjectGlobs } from "./rules/helpers.js"
 export const allowDefaultProjectGlobs = _allowDefaultProjectGlobs
@@ -25,8 +25,6 @@ import { nuxtModuleConfig as _nuxtModuleConfig, nuxtModuleAppends as _nuxtModule
 export const nuxtModuleAppends = _nuxtModuleAppends	
 export const nuxtModuleConfig = _nuxtModuleConfig
 
-export const tsEslintConfig = tsEslint.config
-
-export default tsEslint.config(
+export default defineConfig(
 	...vueConfig,
 )
