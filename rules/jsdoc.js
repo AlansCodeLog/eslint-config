@@ -1,5 +1,10 @@
 import jsdoc from "eslint-plugin-jsdoc"
 
+export const jsdocDefaultcheckTagNames = [
+	"env",
+	"vue-ignore",
+	"experimental",
+]
 /** @type {import('eslint').Linter.Config[]} */
 export default [
 	/**
@@ -25,7 +30,7 @@ export default [
 		 */
 
 			// exceptions are for typedoc plugin
-			"jsdoc/check-tag-names": ["warn", { definedTags: ["packageDocumentation", "env"]}],
+			"jsdoc/check-tag-names": ["warn", { definedTags: jsdocDefaultcheckTagNames }],
 			"jsdoc/tag-lines": ["error", "any", { startLines: 1 }],
 			"jsdoc/no-bad-blocks": "warn",
 			"jsdoc/require-asterisk-prefix": ["warn", "always"],
