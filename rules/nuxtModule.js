@@ -65,6 +65,7 @@ export const nuxtModuleAppends =
 						"vue/multi-word-component-names",
 						"@stylistic/arrow-parens",
 						"@stylistic/max-statements-per-line",
+						"@stylistic/no-multiple-empty-lines",
 						"@stylistic/semi",
 						"@typescript-eslint/no-use-before-define",
 						"@typescript-eslint/naming-convention",
